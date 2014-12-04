@@ -1,10 +1,10 @@
-@import 'bower_components/bourbon/dist/bourbon';
+@import '../../../../MTG-Central/bower_components/bourbon/dist/bourbon';
 
-@import 'partials/variables'; 
+@import 'partials/variables';
 
-@import 'partials/mixins'; 
+@import 'partials/mixins';
 
-@import 'partials/layout'; 
+@import 'partials/layout';
 
 
 html * {
@@ -39,7 +39,7 @@ a {
 }
 
 h2 {
-  font-family: 'Cinzel', serif; 
+  font-family: 'Cinzel', serif;
 
   }
 
@@ -103,7 +103,7 @@ body > main > div.cd-fixed-bg.cd-bg-4 > h2 {
 .cd-main-content {
 	height: 100%;
 	position: relative;
-	z-index: index($main-elements, main-content); 
+	z-index: index($main-elements, main-content);
 	font-size: 40px;
 }
 
@@ -114,7 +114,7 @@ body > main > div.cd-fixed-bg.cd-bg-4 > h2 {
 	background-repeat: no-repeat;
 	background-position: center center;
 	z-index: index($bg-elements, fixed-bg);
-	
+
 	h1, h2 {
 		position: absolute;
 		@include center;
@@ -156,7 +156,7 @@ body > main > div.cd-fixed-bg.cd-bg-4 > h2 {
 			font-size: 48px;
 			font-weight: 300;
 		}
-	
+
 }
 
 .cd-scrolling-bg {
@@ -175,7 +175,7 @@ body > main > div.cd-fixed-bg.cd-bg-4 > h2 {
 	p {
 		font-size: 40px;
 	}
-	
+
 	&.cd-color-2 {
 		background-color: $color-2;
 		color: $color-1;
@@ -194,5 +194,3 @@ body > main > div.cd-fixed-bg.cd-bg-4 > h2 {
 	}
  }
 }
-
-

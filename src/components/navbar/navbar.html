@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top navbar-inverse" ng-controller="NavbarCtrl">
+<nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-header">
     <a class="navbar-brand" href="/">
       <img src='favicon.ico'> MTG Central
@@ -13,7 +13,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <a href="index.html#/list/#search">Search</a>
+      <a ng-show="app.user" href="">{{app.user.facebook.displayName}}</a>
     </ul>
   </div>
 </nav>

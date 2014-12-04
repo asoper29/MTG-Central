@@ -6,7 +6,8 @@
     <h3 class="col-md-12" id="mainH3">Listings</h3>
     <ul class="list">
       <li class="listing" ng-repeat="listing in list.listings">
-        <a class="listTitle col-md-6" href="">{{listing.title}}</a>
+        <img class="thumbnail" src="{{app.user.avatarUrl}}">
+        <a class="listTitle col-md-6" href="{{app.users.facebook.cachedUserProfile.link}}">{{listing.author}}</a>
         <a class="listAuthor col-md-6" href="">{{listing.author}}</a>
       </li>
     </ul>
