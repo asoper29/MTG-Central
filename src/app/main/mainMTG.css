@@ -22,6 +22,56 @@ body, html {
   height: 100%;
 }
 
+#title > img {
+  margin: 0 3% 0 8%;
+}
+
+#listings-img {
+  position: absolute;
+  width: 65%;
+  top: 55%;
+  left: 17%;
+}
+
+#search-img {
+  height: 50%;
+  position: absolute;
+  left: 35%;
+}
+
+#profile-img {
+  position: absolute;
+  width: 45%;
+  left: 3%;
+}
+
+.cd-container > img {
+  height: 100px;
+  width: auto;
+  margin: 5%;
+}
+
+.cd-main-content > div > section > p {
+  width: 59%;
+  position: absolute;
+  left: 19%;
+  top: 40%;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+}
+
+.cd-main-content > div > section > button {
+  position: absolute;
+  top: 55%;
+  left: 43%;
+}
+
+header > div {
+  display: inline;
+  margin-left: 7%;
+}
+
 a {
   color: #000000;
   text-decoration: none; }
@@ -34,22 +84,7 @@ body {
   font-family: 'Cinzel', serif; }
 
 body header {
-  padding-top: 17px;
-  padding-bottom: 20px;
   padding-top: 15px; }
-
-body header a img {
-  margin-top: -18px; }
-
-body > div > header > a:nth-child(5) {
-  padding-left: 65px;
-  padding-right: 60px;
-  padding-bottom: 15px; }
-
-body > div > header > a:nth-child(3) {
-  padding-left: 75px;
-  padding-right: 70px;
-  padding-bottom: 15px; }
 
 body > div > main > div.cd-scrolling-bg.cd-color-2 > div > p {
   color: white;
@@ -92,10 +127,10 @@ body > div > main > div.cd-fixed-bg.cd-bg-4 > h2 {
   background-repeat: no-repeat;
  /* background-position: center center;*/
   z-index: 1; }
-  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+  .cd-fixed-bg h1, .cd-fixed-bg h2, .cd-container > h2 {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 10%;
     bottom: auto;
     right: auto;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -106,8 +141,7 @@ body > div > main > div.cd-fixed-bg.cd-bg-4 > h2 {
     width: 90%;
     max-width: 1170px;
     text-align: center;
-    font-size: 30px;
-    font-size: 1.875rem;
+    font-size: 70px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     color: white; }
   .cd-fixed-bg.cd-bg-1 {
@@ -125,7 +159,7 @@ body > div > main > div.cd-fixed-bg.cd-bg-4 > h2 {
     .cd-fixed-bg {
       background-attachment: fixed; }
       .cd-fixed-bg h1, .cd-fixed-bg h2 {
-        font-size: 48px;
+        font-size: 38px;
         font-weight: 300; } }
   .cd-scrolling-bg {
     position: relative;
