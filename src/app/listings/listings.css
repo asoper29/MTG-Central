@@ -10,6 +10,10 @@ body {
   padding-top: 10px;
 }
 
+.navbar-brand > img {
+  display: inline;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -50,22 +54,27 @@ body {
   border-radius: 5px 5px 0 0;
 }
 
-#main > h3 {
+#main > h1 {
   padding: 5pt 0 0 0;
-  margin: 0;
+  margin: 0 0 7pt 0;
   color: #fff;
   border-radius: 5px 5px 0 0;
   height: 30pt;
 }
 
+#main > h3 {
+  color: #9d9d9d;
+  font-size: 12pt;
+}
+
 .list {
-  margin-top: 4%;
-  list-style:none;
+  margin-top: 8%;
+  list-style: none;
   padding: 8pt;
 }
 
 .listing {
-  height: 30pt;
+  height: 45pt;
 }
 
 .listing:nth-child(odd) {
@@ -76,14 +85,23 @@ body {
   background-color: rgb(234, 234, 234);
 }
 
-.listTitle {
-  text-align: left;
-  line-height: 30pt;
+.listing > p {
+  display: inline;
+  margin-top: 2%;
 }
 
-.listAuthor {
-  text-align: right;
+.listAuthor  > p {
   line-height: 30pt;
+  font-size: 18pt;
+  margin-top: 2%;
+}
+
+.authorPic {
+  display: inline;
+  padding: 0px;
+  width: 19%;
+  border-radius: 4px;
+  margin: 2pt 5pt 0pt -7pt;
 }
 
 #search {
