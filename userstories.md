@@ -1,85 +1,78 @@
-
 ## MVP
 =========
-#### I can select my state (5)
-* I can click on my state on a map
 
----- 
-
-#### I can select my city from a list of cities (1)
+#### Anyone can sign in using Facebook so that they can create a listing (8)
+* Users may only have one listing
+* Only authenticated users can create / edit their own listing
 
 ----
- 
-#### I can create a post (8)
-* I can add a title
-* I can add a description
-* I can add a name
-* I can add the shop location that I frequent
-* I can add an email
-
----- 
-
-#### I can add cards I have to my post (20)
-* I can search for cards with autocomplete functionality
-* I can click a card in the search field to add it to my list
-* I can change the quantity of the card (default 1)
-* I can delete a card if I accidentally added it
-
----- 
-
-#### I can add cards I want to my post (1 - After haves are done)
-* I can search for cards with autocomplete functionality
-* I can click a card in the search field to add it to my list
-* I can change the quantity of the card (default 1)
-*  I can delete a card if I accidentally added it
-
----- 
-
-#### I can edit my post (8)
-* I can delete cards
-* I can update card quantity
-
----- 
-
-#### I can add non-card items (misc. section) (3)
-* I can add random supplies / gaming accessories via text-area
-
----- 
-
-#### I can view other posts (3)
-* I can view by most recently updated in descending order
+#### Anyone can view other listings so that they can see others' have / wants (3)
+* Displayed on one page
+* Ascending order based on recently updated
 
 ----
- 
-#### I can search for cards in each post (5)
-* I can search by card name based on haves or wants
+
+#### Anyone can search for cards so that they can find only posts with that card (5)
+* Same functionality as searching when creating listing
+
+----
+
+#### An authenticated user can create a listing so that they can display the cards they have/want (8)
+* Can add a title
+* Can add a description
+* Can add a name
+* Can add the shop location that they frequent
+* Can add an email
+
+----
+
+#### An authenticated user can search for a card so that they can add it to their have/want list (8)
+* Autocomplete functionality
+* Minimal user interaction
+
+----
+
+#### An authenticated user can view results of their search so that they can add cards to their have/want list (13)
+* Click to add item
+* Create a new list item
+* Drop down for quanity
+* Non editable text field
+
+----
+
+#### An authenticated user can remove a card while creating their list so that they can fix mistakes (3)
+* Delete individual items rather than whole list
+* Can't edit the card text
+* Can update quantity or delete
+
+----
+
+#### An authenticated user can edit their listing so that they can update card quantity and delete cards (8)
+* After a post has been submitted, can still be changed
+* Add new cards
+* Remove cards
+* Change quantity
+
+----
+
+
+#### An authenticated user can link to a user's Facebook so that they can contact them via Facebook (3)
+* Use Facebook messenger for chat
 
 ========
 ## Stretch Goals
 ========
 
-#### I can authenticate a user's post via email
+#### Anyone can chat with other users to arrange a trade
 
 ----
 
-#### I can authenticate via social networks
+#### Anyone can look up the price of cards so that they can compare values of a trade
 
 ----
 
-#### I can chat with other users
+#### Anyone can keep track of their trade history so that they remember to update my haves / wants
 
----- 
+----
 
-#### I can look up the price of cards to compare a trade (implement an online pricing database)
-
----- 
-
-#### I can keep track of my trade history
-
----- 
-
-#### I can add feedback for users
-
-
-
-
+#### Anyone can add feedback for users to allow them to avoid bad traders
