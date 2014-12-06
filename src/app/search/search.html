@@ -1,4 +1,3 @@
-
 <div ng-controller='SearchCtrl as search'>
   <!--[if lt IE 10]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -10,7 +9,14 @@
   </form>
 
   <ul>
-    <li ng-repeat = "set in search.sets  | filter:searchText | orderBy:cardSetName" style='list-style-type:none'>
-    {{set.name}} | {{set.cardSetName}} </li>
+    <li ng-click="search.addItem()" ng-repeat = "set in search.sets  | limitTo: 10 | filter:searchText " style='list-style-type:none'>
+      {{set.name}} | {{set.cardSetName}}
+    </li>
+  </ul>
+
+  <ul>
+    <li ng-repeat="have in search.haves">
+      {{have.name}}
+    </li>
   </ul>
 </div>
