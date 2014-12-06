@@ -1,22 +1,18 @@
-<div ng-controller='SearchCtrl as search'>
+<div class="col-md-6" ng-controller='SearchCtrl as search'>
   <!--[if lt IE 10]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <form ng-submit='todoAdd()'>Search:
-    <input type='text' ng-model='searchText' placeholder='Search Cards'>
-
-    <br>
-  </form>
 
   <ul>
-    <li ng-click="search.addItem()" ng-repeat = "set in search.sets  | limitTo: 10 | filter:searchText " style='list-style-type:none'>
-      {{set.name}} | {{set.cardSetName}}
+    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q" id="topsearch" placeholder="Search..." class="field" />
+    <li ng-repeat = "card in search.cards | limitTo: 10">
+      <p ng-click="search.addItem($index)">{{card.name}} | {{card.cardSetName}}</p>
     </li>
   </ul>
 
   <ul>
     <li ng-repeat="have in search.haves">
-      {{have.name}}
+      {{have.name}} | {{have.cardSetName}}
     </li>
   </ul>
 </div>

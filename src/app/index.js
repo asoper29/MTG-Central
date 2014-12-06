@@ -1,7 +1,7 @@
 'use strict';
 
 // Create our main mtgCentral module and injecting dependencies
-angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'uiRouterStyles', 'firebase', 'ui.autocomplete'])
+angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'uiRouterStyles', 'firebase'])
 
   // Declaring a constant variable for the base url
   .constant('CONFIG', {
