@@ -39,6 +39,10 @@ angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.rout
       url: '/search',
       templateUrl: 'app/search/search.html',
       controller: 'SearchCtrl',
+      data: {
+        css: 'app/search/search.css'
+      }
+
     });
 
     // Catch all for routes

@@ -1,0 +1,18 @@
+.ui-autocomplete-loading {
+  background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+#card {
+  width: 25em;
+}
+
+#div-two {
+  margin-top:2em;
+  font-family:Arial
+}
+
+#log {
+  height: 200px;
+  width: 300px;
+  overflow: auto;
+}
