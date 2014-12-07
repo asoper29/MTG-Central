@@ -35,6 +35,15 @@ angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.rout
       }
     })
 
+    .state('list.profile', {
+      url: '/profile',
+      templateUrl: 'app/profile/profile.html',
+      data: {
+        css: 'app/profile/profile.css'
+      }
+    })
+
+
     .state('search', {
       url: '/search',
       templateUrl: 'app/search/search.html',

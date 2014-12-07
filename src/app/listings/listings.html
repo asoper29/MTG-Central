@@ -12,10 +12,11 @@
       <li class="listing" ng-repeat="listing in list.listings">
         <a class="col-xs-4 col-sm-4 col-md-4 listAuthor" href="{{app.users.facebook.cachedUserProfile.link}}">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{app.user.avatarUrl}}">
-          <p class="col-xs-8 col-sm-8 col-md-8">{{listing.author}}</p>
+          <p ui-sref="list.profile" class="col-xs-8 col-sm-8 col-md-8">{{listing.author}}</p>
         </a>
         <p id="desc" class="col-xs-4 col-sm-4 col-md-4">{{listing.description}}</p>
         <p id="date" class="col-xs-4 col-sm-4 col-md-4">{{listing.updated}}</p>
+        <div ui-view></div>
       </li>
     </ul>
   </section>

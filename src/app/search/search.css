@@ -16,3 +16,17 @@
   width: 300px;
   overflow: auto;
 }
+
+#search {
+  float: left;
+  width: 50%;
+}
+
+#haves {
+  float: right;
+  background-color: #eee;
+}
+
+.search-cont {
+  margin-top: 2%;
+}

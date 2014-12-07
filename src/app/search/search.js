@@ -17,7 +17,6 @@ angular.module('mtgCentral')
         $.ajax({
           url: "http://api.mtgdb.info/search/" + searchString,
           success: function(data) {
-            console.log(data);
             deffered.resolve(data);
           }
         });
@@ -64,6 +63,16 @@ angular.module('mtgCentral')
         });
         if (duplicate === false) {
           self.haves.push(self.cards[index]);
+        }
+      }
+    };
+
+    this.removeItem = function($event){
+      var index = $(event.target).attr('id')
+      for (var i = 0; i < self.haves.length; i++) {
+        if (self.haves[i].id == index) {
+          self.haves.splice(i,1);
+          break;
         }
       }
     };
