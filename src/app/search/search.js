@@ -68,21 +68,3 @@ angular.module('mtgCentral')
       }
     };
 }]);
-
-// $(document).ready(function() {
-//   $('#topsearch').keyup(function() {
-//     var searchString = $("#topsearch").val();
-//     if (searchString.length >= 3) {
-//       $('#data_returned div').remove();
-//       $.ajax({
-//         url: "http://api.mtgdb.info/search/" + searchString,
-//         success: function(data) {
-//           console.log(data);
-//           data.forEach(function(element) {
-//             $('#data_returned').append('<div>' + element.name + '</div>');
-//           });
-//         }
-//       });
-//     }
-//   });
-// });
