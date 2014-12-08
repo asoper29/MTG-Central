@@ -23,28 +23,47 @@ angular.module('mtgCentral')
   //   return $firebase(FirebaseUrl.child('users')).$asObject();
   // }])
 
-  .controller('ListCtrl', ['FirebaseUrl', function(FirebaseUrl){
+  .controller('ListCtrl', function($firebase, FirebaseUrl){
 
-    var ref = FirebaseUrl.child('users');
+    var ref = new Firebase("https://mtg-central.firebaseio.com/");
+
+    var sync = $firebase(ref)
+
+    var syncArray = sync.$asObject()
+
+    syncArray.$loaded().then(function(){
+      console.log(syncArray.users)
+      angular.forEach(syncArray.users, function(value, index){
+        console.log(value.haves)
+      })
+    })
+
+    // syncObject = sync.$asObject()
+
+    // console.log(sync);
+
     var self = this;
     this.userHaves = [];
 
-    // TODO: Add a quantity array and cards array to haves.
-    ref.orderByChild("haves").limitToLast(1).on("child_added", function(snapshot) {
-      self.userHaves = snapshot.val().haves;
-      // console.log(self.userHaves);
-      // console.log(self.userHaves.toString());
-      $.ajax({
-          url: "http://api.mtgdb.info/cards/" + self.userHaves.toString(),
-          success: function(data) {
-            self.userHaves = data;
-            console.log(self.userHaves);
-          }
-        });
-        console.log(self.userHaves);
-    });
 
-    console.log(self.userHaves);
+    // TODO: Add a quantity array and cards array to haves.
+    // ref.orderByChild("haves").limitToLast(1)
+    //
+    // .on("child_added", function(snapshot) {
+    //   self.userHaves = snapshot.val().haves;
+    //   // console.log(self.userHaves);
+    //   // console.log(self.userHaves.toString());
+    //   $.ajax({
+    //       url: "http://api.mtgdb.info/cards/" + self.userHaves.toString(),
+    //       success: function(data) {
+    //         self.userHaves = data;
+    //         console.log(self.userHaves);
+    //       }
+    //     });
+    //     console.log(self.userHaves);
+    // });
+    //
+    // console.log(self.userHaves);
 
       this.listings = [
         { 'id' : '1', 'description' : 'Standard, EDH, Foreign Foil', 'author' : 'Alex Soper', 'updated' : '12/3/14'},
@@ -54,4 +73,4 @@ angular.module('mtgCentral')
 
 
 
-  }]);
+  });

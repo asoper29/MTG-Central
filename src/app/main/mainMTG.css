@@ -2,474 +2,462 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-  *, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
-    body {
-      font-size: 100%;
-      font-family: "Cinzel", serif;
-      color: #000000;
-      background-color: #000000; }
-
-      body h2 {
-        color: white; }
-
-        body, html {
-          height: 100%; }
-
-          #mainContainer {
-            height: 100%;
-          }
-
-          #title > img {
-            margin: 0 3% 0 8%;
-          }
-
-          #listings-img {
-            position: absolute;
-            width: 65%;
-            top: 55%;
-            left: 17%;
-          }
-
-          #search-img {
-            height: 50%;
-            position: absolute;
-            left: 35%;
-          }
-
-          #profile-img {
-            position: absolute;
-            width: 45%;
-            left: 3%;
-          }
-
-          .cd-container > img {
-            height: 100px;
-            width: auto;
-            margin: 5%;
-          }
-
-          .cd-main-content > div > section > p {
-            width: 59%;
-            position: absolute;
-            left: 19%;
-            top: 52%;
-            color: #fff;
-            font-size: 22px;
-            text-align: center;
-          }
-
-          .cd-main-content > div > section > button {
-            position: absolute;
-            top: 55%;
-            left: 43%;
-          }
-
-          #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 > p > img { /*MTG Logo Image*/
-            width: 500px;
-            height: 150px;
-          }
-
-          header > div {
-            display: inline;
-            margin-left: 7%;
-          }
-
-          a {
-            color: #000000;
-            text-decoration: none; }
-
-            h2 {
-              font-family: 'Cinzel', serif; }
-
-              body {
-                font-size: 10%;
-                font-family: 'Cinzel', serif;
-              }
-
-              body header {
-                padding-top: 15px;
-              }
-
-              body > div > main > div.cd-scrolling-bg.cd-color-2 > div > p {
-                color: white;
-                padding-top: 50px;
-                font-size: 28px;
-              }
-
-              body > div > main > div.cd-fixed-bg.cd-bg-2 > h2 {
-                font-size: 70px;
-              }
-
-              body > div > main > div.cd-fixed-bg.cd-bg-3 > h2 {
-                font-size: 70px;
-              }
-
-              body > div > main > div.cd-fixed-bg.cd-bg-4 > h2 {
-                font-size: 70px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(6) {
-                height: 40px;
-                width: 200px;
-              }
-
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(6) {
-                margin-right: 0px;
-                margin-top: 0px;
-                margin-bottom: 0px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(2){
-                margin-left: 0px;
-                margin-right: 0px;
-                margin-bottom: 0px;
-                margin-top: 0px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div {
-                max-width: 2100px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(2) {
-                margin-right: 50px;
-                margin-left: 37px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(3) {
-                margin-left: 90px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(4) {
-                margin-left: 80px;
-                margin-right: 0px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(5) {
-                margin-left: 114px;
-                margin-right: 0px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(1) {
-                margin-right: 100px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(7) {
-                margin-left: 106px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(8) {
-                margin-left: 102px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(9) {
-                margin-left: 90px;
-              }
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(10) {
-                margin-left: 104px;;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(11) {
-                margin-left: 115px;
-                margin-right: 34px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(12) {
-                margin-left: 123px;
-                margin-right: 134px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(13) {
-                margin-right: 124px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(15) {
-                margin-left: 85px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 {
-                padding-top: 0px;
-                padding-bottom: 0px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div {
-                max-height: 766px;
-              }
-
-              #title > a {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > a:nth-child(3) > img {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > a:nth-child(4) > img {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > a:nth-child(5) > img {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > a:nth-child(6) > img {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > a:nth-child(7) > img {
-                height: 125px;
-                width: 125px;
-              }
-
-              #mainContainer > header > div:nth-child(8) > button {
-                padding: 6px 29px;
-                font-size: 18px;
-                line-height: 1.33;
-                border-radius: 6px;
-                margin-left: 98px;
-              }
-
-              #mainContainer > header > div:nth-child(8) > button {
-                color: #fff;
-                background-color: #173E60;
-                border-color: #374857;
-              }
-
-              #title > img {
-                margin-left: 20px;
-                margin-right: 127px;
-              }
-
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p {
-                /*  text-shadow: 2px 1px #000000;
-                filter: blur(2px);
-                -webkit-filter: blur(2px);
-                filter: url('blur.svg#blur');*/
-                text-shadow:0px 0px 10px #fff;
-                color:white;
-              }
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p:nth-child(4) {
-                top: 197px;
-              }
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 { /*1st Section With Group Shot */
-                font-size: 72px;
-                text-shadow: 2px 1px #000000;
-
-              }
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 {
-                margin-top: 129px;
-                font-size: 88px;
-                text-shadow:0px 0px 5px #fff;
-                color:white;
-                text-shadow: 1px 1px 1px #000, 3px 3px 5px black;
-              }
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h2 {
-                font-size: 88px;
-                text-shadow:0px 0px 5px #fff;
-                color:white;
-                text-shadow: 1px 1px 1px #000, 3px 3px 5px black;
-              }
-
-
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p:nth-child(4) > img {
-                height: 120px;
-                width: 500px;
-                top: 0px;
-
-              }
-              /*
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h3 {
-              width: 59%;
-              position: absolute;
-              left: 19%;
-              top: 40%;
-              color: #fff;
-              font-size: 22px;
-              text-align: center;
-              margin-top: 20px;
-              margin-bottom: 10px;
-              }*/
-
-
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h3 {
-                width: 59%;
-                position: absolute;
-                left: 19%;
-                top: 40%;
-                color: #fff;
-                font-size: 22px;
-                text-align: center;
-              }
-
-
-
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 {
-                top: 0%;
-              }
-
-              #mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h2 {
-                top: 0%;
-                margin-top: 375px;
-              }
-
-              #mainContainer > main > div.cd-scrolling-bg.cd-color-2 > div > img {
-                width: 90%px;
-                height: 100%px;
-                margin-top: 0px;
-                margin-left: 0px;
-                margin-right: 0px;
-                margin-bottom: 0px;
-              }
-
-              /*Modules for break points*/
-              .cd-container {
-                width: 90%;
-                max-width: 768px;
-                margin: 0 auto;
-                height: 850px;
-              }
-
-              .cd-container p {
-                font-size: 50px;
-              }
-
-              .cd-container::after {
-                content: '';
-                display: table;
-                clear: both;
-              }
-
-              /* --------------------------------- */
-              .cd-main-content {
-                height: 100%;
-                position: relative;
-                z-index: 1;
-                font-size: 40px;
-              }
-
-              .cd-fixed-bg {
-                position: relative;
-                min-height: 100%;
-                background-size: cover;
-                background-repeat: no-repeat;
-                /* background-position: center center;*/
-                z-index: 1;
-              }
-
-              .cd-fixed-bg h1, .cd-fixed-bg h2, .cd-container > h2 {
-                position: absolute;
-                left: 50%;
-                top: 10%;
-                bottom: auto;
-                right: auto;
-                -webkit-transform: translateX(-50%) translateY(-50%);
-                -moz-transform: translateX(-50%) translateY(-50%);
-                -ms-transform: translateX(-50%) translateY(-50%);
-                -o-transform: translateX(-50%) translateY(-50%);
-                transform: translateX(-50%) translateY(-50%);
-                width: 90%;
-                max-width: 1170px;
-                text-align: center;
-                font-size: 70px;
-                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-                color: white;
-              }
-
-              .cd-fixed-bg.cd-bg-1 {
-                background-image: url("images/mtg-background-1.jpg");
-              }
-
-              .cd-fixed-bg.cd-bg-2 {
-                background-image: url("images/mtg-background-2.jpg");
-              }
-
-              .cd-fixed-bg.cd-bg-3 {
-                background-image: url("images/mtg-background-3.jpg");
-              }
-
-              .cd-fixed-bg.cd-bg-4 {
-                background-image: url("images/mtg-background-4.jpg");
-              }
-
-              @media only screen and (min-width: 768px) {
-
-                .cd-fixed-bg h1, .cd-fixed-bg h2 {
-                  font-size: 36px;
-                }
-              }
-
-              @media only screen and (min-width: 1170px) {
-
-                .cd-fixed-bg {
-                  background-attachment: fixed;
-                }
-
-                .cd-fixed-bg h1, .cd-fixed-bg h2 {
-                  font-size: 38px;
-                  font-weight: 300;
-                }
-              }
-
-              .cd-scrolling-bg {
-                position: relative;
-                max-height: 105%;
-                padding: 4em 0;
-                line-height: 1.6;
-                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-                z-index: 2;
-              }
-
-              .cd-fixed-bg {
-                position: relative;
-                min-height: 100%;
-                padding: 4em 0;
-                line-height: 1.6;
-                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-                z-index: 2;
-              }
-
-              .cd-fixed-bg .cd-scrolling-bg.cd-color-1 {
-                background-color: #000000;
-                color: #666666;
-              }
-
-              .cd-fixed-bg .cd-scrolling-bg p {
-                font-size: 40px;
-              }
-
-              .cd-fixed-bg .cd-scrolling-bg.cd-color-2 {
-                background-color: #000000;
-                color: #000000;
-              }
-
-              .cd-fixed-bg .cd-scrolling-bg.cd-color-3 {
-                background-color: #000000;
-                color: #000000;
-              }
-
-              @media only screen and (min-width: 768px) {
-
-                .cd-fixed-bg .cd-scrolling-bg {
-                  padding: 8em 0;
-                  font-size: 20px;
-                  font-size: 1.25rem;
-                  line-height: 2;
-                  font-weight: 300; }
-                }
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 100%;
+  font-family: "Cinzel", serif;
+  color: #000000;
+  background-color: #000000; }
+
+body h2 {
+  color: white; }
+
+body, html {
+height: 100%; }
+
+#mainContainer {
+  height: 100%;
+}
+
+#title > img {
+  margin: 0 3% 0 8%;
+}
+
+#listings-img {
+  position: absolute;
+  width: 65%;
+  top: 55%;
+  left: 17%;
+}
+
+#search-img {
+  height: 50%;
+  position: absolute;
+  left: 35%;
+}
+
+#profile-img {
+  position: absolute;
+  width: 45%;
+  left: 3%;
+}
+
+.cd-container > img {
+  height: 100px;
+  width: auto;
+  margin: 5%;
+}
+
+.cd-main-content > div > section > p {
+  width: 59%;
+  position: absolute;
+  left: 19%;
+  top: 52%;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+}
+
+.cd-main-content > div > section > button {
+  position: absolute;
+  top: 55%;
+  left: 43%;
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 > p > img { /*MTG Logo Image*/
+  width: 500px;
+  height: 150px;
+}
+
+header > div {
+  display: inline;
+  margin-left: 7%;
+}
+
+a {
+  color: #000000;
+  text-decoration: none; }
+
+h2 {
+font-family: 'Cinzel', serif; }
+
+body {
+  font-size: 10%;
+  font-family: 'Cinzel', serif;
+}
+
+body header {
+  padding-top: 15px;
+}
+
+body > div > main > div.cd-scrolling-bg.cd-color-2 > div > p {
+  color: white;
+  padding-top: 50px;
+  font-size: 28px;
+}
+
+body > div > main > div.cd-fixed-bg.cd-bg-2 > h2 {
+  font-size: 70px;
+}
+
+body > div > main > div.cd-fixed-bg.cd-bg-3 > h2 {
+  font-size: 70px;
+}
+
+body > div > main > div.cd-fixed-bg.cd-bg-4 > h2 {
+  font-size: 70px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(6) {
+  height: 40px;
+  width: 200px;
+}
+
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(6) {
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(2){
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div {
+  max-width: 2100px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(2) {
+  margin-right: 50px;
+  margin-left: 37px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(3) {
+  margin-left: 90px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(4) {
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(5) {
+  margin-left: 114px;
+  margin-right: 0px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(1) {
+  margin-right: 100px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(7) {
+  margin-left: 106px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(8) {
+  margin-left: 102px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(9) {
+  margin-left: 90px;
+}
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(10) {
+  margin-left: 104px;;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(11) {
+  margin-left: 115px;
+  margin-right: 34px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(12) {
+  margin-left: 123px;
+  margin-right: 134px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(13) {
+  margin-right: 124px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div > img:nth-child(15) {
+  margin-left: 85px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-1 > div {
+  max-height: 766px;
+}
+
+#title > a {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > a:nth-child(3) > img {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > a:nth-child(4) > img {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > a:nth-child(5) > img {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > a:nth-child(6) > img {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > a:nth-child(7) > img {
+  height: 125px;
+  width: 125px;
+}
+
+#mainContainer > header > div:nth-child(8) > button {
+  padding: 6px 29px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+  margin-left: 98px;
+}
+
+#mainContainer > header > div:nth-child(8) > button {
+  color: #fff;
+  background-color: #173E60;
+  border-color: #374857;
+}
+
+#title > img {
+  margin-left: 20px;
+  margin-right: 127px;
+}
+
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p {
+  /*  text-shadow: 2px 1px #000000;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  filter: url('blur.svg#blur');*/
+  text-shadow:0px 0px 10px #fff;
+  color:white;
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p:nth-child(4) {
+  top: 197px;
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 { /*1st Section With Group Shot */
+  font-size: 72px;
+  text-shadow: 2px 1px #000000;
+
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 {
+  margin-top: 129px;
+  font-size: 88px;
+  text-shadow:0px 0px 5px #fff;
+  color:white;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px black;
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h2 {
+  font-size: 88px;
+  text-shadow:0px 0px 5px #fff;
+  color:white;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px black;
+}
+
+
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > p:nth-child(4) > img {
+  height: 120px;
+  width: 500px;
+  top: 0px;
+
+}
+
+
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h3 {
+  width: 59%;
+  position: absolute;
+  left: 19%;
+  top: 40%;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+}
+
+
+
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h1 {
+  top: 0%;
+}
+
+#mainContainer > main > div.cd-fixed-bg.cd-bg-1 > section > h2 {
+  top: 0%;
+  margin-top: 375px;
+}
+
+#mainContainer > main > div.cd-scrolling-bg.cd-color-2 > div > img {
+  width: 90%px;
+  height: 100%px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+/*Modules for break points*/
+.cd-container {
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+  height: 850px;
+}
+
+.cd-container p {
+  font-size: 50px;
+}
+
+.cd-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* --------------------------------- */
+.cd-main-content {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  font-size: 40px;
+}
+
+.cd-fixed-bg {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center;*/
+  z-index: 1;
+}
+
+.cd-fixed-bg h1, .cd-fixed-bg h2, .cd-container > h2 {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  max-width: 1170px;
+  text-align: center;
+  font-size: 70px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+  background-image: url("images/mtg-background-1.jpg");
+}
+
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("images/mtg-background-2.jpg");
+}
+
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("images/mtg-background-3.jpg");
+}
+
+.cd-fixed-bg.cd-bg-4 {
+  background-image: url("images/mtg-background-4.jpg");
+}
+
+@media only screen and (min-width: 768px) {
+
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+
+  .cd-fixed-bg {
+    background-attachment: fixed;
+  }
+
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    font-size: 38px;
+    font-weight: 300;
+  }
+}
+
+.cd-scrolling-bg {
+  position: relative;
+  max-height: 105%;
+  padding: 4em 0;
+  line-height: 1.6;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.cd-fixed-bg {
+  position: relative;
+  min-height: 100%;
+  padding: 4em 0;
+  line-height: 1.6;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.cd-fixed-bg .cd-scrolling-bg.cd-color-1 {
+  background-color: #000000;
+  color: #666666;
+}
+
+.cd-fixed-bg .cd-scrolling-bg p {
+  font-size: 40px;
+}
+
+.cd-fixed-bg .cd-scrolling-bg.cd-color-2 {
+  background-color: #000000;
+  color: #000000;
+}
+
+.cd-fixed-bg .cd-scrolling-bg.cd-color-3 {
+  background-color: #000000;
+  color: #000000;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .cd-fixed-bg .cd-scrolling-bg {
+    padding: 8em 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 300; }
+  }
