@@ -10,13 +10,40 @@
 
     <ul class="list">
       <li class="listing" ng-repeat="listing in list.listings">
-        <a class="col-xs-4 col-sm-4 col-md-4 listAuthor" href="{{app.users.facebook.cachedUserProfile.link}}">
+        <a class="col-xs-4 col-sm-4 col-md-4 listAuthor">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{app.user.avatarUrl}}">
-          <p ui-sref="list.profile" class="col-xs-8 col-sm-8 col-md-8">{{listing.author}}</p>
+          <p class="col-xs-8 col-sm-8 col-md-8" data-toggle="modal" data-target="#{{listing.id}}">{{listing.author}}</p>
         </a>
         <p id="desc" class="col-xs-4 col-sm-4 col-md-4">{{listing.description}}</p>
         <p id="date" class="col-xs-4 col-sm-4 col-md-4">{{listing.updated}}</p>
-        <div ui-view></div>
+        <div id="{{listing.id}}" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Responsive</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>{{listing.author}}</h4>
+                <p><input class="form-control" type="text" ng-repeat="have in listing.haves">{{have.name}} | {{have.cardSetName}}</p>
+              </div>
+              <div class="col-md-6">
+                <h4>{{listing.description}}</h4>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+                <p><input class="form-control" type="text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </li>
     </ul>
   </section>

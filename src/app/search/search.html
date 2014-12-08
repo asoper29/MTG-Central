@@ -12,9 +12,10 @@
 
   <ul id="haves">
     <li ng-repeat="have in search.haves">
-      <p id="{{have.id}}" ng-click="search.removeItem($event)">
+      <p ng-click="search.removeItem(have.id)">
         {{have.name}} | {{have.cardSetName}}
       </p>
     </li>
+    <button ng-click="search.pushCards(app.user.facebook.id)">Push Stuff</button>
   </ul>
 </div>

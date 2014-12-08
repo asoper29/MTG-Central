@@ -2,18 +2,12 @@
 
 angular.module('mtgCentral')
 
-  .factory('cards', ['$firebase', function($firebase){
-    var ref = new Firebase('https://mtg-central.firebaseio.com/cards')
-    .limitToFirst(500);
-    return $firebase(ref).$asArray();
-  }])
-
   .factory('SearchSvc', ['$q', function($q){
     function SearchSvc() {}
     SearchSvc.prototype.searchByName = function(searchString) {
       var deffered = $q.defer();
       if (searchString.length >= 3) {
-        // Figure out the best way to add a delay
+        // TODO: Figure out the best way to add a delay
         $.ajax({
           url: "http://api.mtgdb.info/search/" + searchString,
           success: function(data) {
@@ -21,29 +15,26 @@ angular.module('mtgCentral')
           }
         });
       }
-
       return deffered.promise;
-
     };
     return (SearchSvc);
   }])
 
-  .controller('SearchCtrl', ['cards', 'SearchSvc', '$scope', function(cards, SearchSvc, $scope){
+  .controller('SearchCtrl', ['SearchSvc', 'FirebaseUrl', '$scope', function(SearchSvc, FirebaseUrl, $scope){
     var self = this;
 
     var searchSvc = new SearchSvc();
 
-    this.sets = cards;
-    this.haves = [];
-    //var badSets = ['badSet'];
+    this.cardIds = [];
 
-    this.cards = [];
+    this.haves = [];
+    // TODO: var badSets = ['badSet'];
 
     this.searchByName = function(){
       self.cards = [];
       searchSvc.searchByName($scope.searchForm).then(function(data){
         data.forEach(function(card){
-          // Create an object of known online only sets and compare the set name
+          // TODO: Create an object of known online only sets and compare the set name
           // To the object and remove those results
           self.cards.push(card);
         });
@@ -63,17 +54,28 @@ angular.module('mtgCentral')
         });
         if (duplicate === false) {
           self.haves.push(self.cards[index]);
+          self.cardIds.push(self.cards[index].id);
+          console.log(self.cardIds)
+          
         }
       }
     };
 
-    this.removeItem = function($event){
-      var index = $(event.target).attr('id')
+    this.removeItem = function(index){
       for (var i = 0; i < self.haves.length; i++) {
         if (self.haves[i].id == index) {
           self.haves.splice(i,1);
           break;
         }
       }
+    };
+
+    this.pushCards = function(id){
+      var user = FirebaseUrl.child('users').child(id);
+
+      // Update the authdUser's information in Firebase
+      user.update({
+        haves: self.cardIds
+      });
     };
 }]);

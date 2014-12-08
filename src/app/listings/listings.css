@@ -99,7 +99,8 @@ body {
 .authorPic {
   display: inline;
   padding: 0px;
-  width: 19%;
+  width: 41pt;
+  height: 41pt;
   border-radius: 4px;
   margin: 2pt 5pt 0pt -7pt;
 }
