@@ -29,6 +29,7 @@ angular.module('mtgCentral')
     var self = this;
     this.userHaves = [];
 
+    // TODO: Add a quantity array and cards array to haves.
     ref.orderByChild("haves").limitToLast(1).on("child_added", function(snapshot) {
       self.userHaves = snapshot.val().haves;
       // console.log(self.userHaves);
@@ -40,31 +41,10 @@ angular.module('mtgCentral')
             console.log(self.userHaves);
           }
         });
+        console.log(self.userHaves);
     });
 
-
-
-    // $.ajax({
-    //   url: "http://api.mtgdb.info/cards/" + self.userHaves.valueOf(),
-    //   success: function(data) {
-    //     self.userHaves = data;
-    //   }
-    // });
-    // console.log(self.userHaves.valueOf());
-
-    // Retrieve new posts as they are added to Firebase
-    // ref.on('value', function(snapshot) {
-    //   var users = snapshot.val();
-    //
-    //   for (var haves in users) {
-    //     var obj = users[haves];
-    //     for (var prop in obj) {
-    //       if (obj.hasOwnProperty(prop)) {
-    //         console.log(prop + ' = ' + obj[prop]);
-    //       }
-    //     }
-    //   }
-    // });
+    console.log(self.userHaves);
 
       this.listings = [
         { 'id' : '1', 'description' : 'Standard, EDH, Foreign Foil', 'author' : 'Alex Soper', 'updated' : '12/3/14'},
