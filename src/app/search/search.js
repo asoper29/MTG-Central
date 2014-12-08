@@ -25,8 +25,10 @@ angular.module('mtgCentral')
 
     var searchSvc = new SearchSvc();
 
-    this.cardIds = [];
+    this.wantIds = [];
+    this.haveIds = [];
 
+    this.wants = [];
     this.haves = [];
     // TODO: var badSets = ['badSet'];
 
@@ -42,24 +44,64 @@ angular.module('mtgCentral')
     };
 
     this.addItem = function(index){
-      if(self.haves.length === 0){
-        self.haves.push(self.cards[index]);
+      var list;
+      // See what check box has been checked
+      if ($('#haveCheck').prop('checked')){
+        list = self.haves;
       } else {
+        list = self.wants;
+      }
+      if(list.length === 0){
+        list.push(self.cards[index]);
+        if (list === self.wants){
+          self.wantIds.push(self.cards[index].id);
+        } else {
+          self.haveIds.push(self.cards[index].id);
+        }
+      }else{
         var duplicate = false;
-        self.haves.some(function (value) {
+        list.some(function(value){
           var tempId = self.cards[index].id;
-          if (value.id === tempId) {
+          if(value.id === tempId){
             duplicate = true;
           }
         });
-        if (duplicate === false) {
-          self.haves.push(self.cards[index]);
-          self.cardIds.push(self.cards[index].id);
-          console.log(self.cardIds)
-          
+        if(duplicate === false){
+          list.push(self.cards[index]);
+          if (list === self.wants){
+            self.wantIds.push(self.cards[index].id);
+          } else {
+            self.haveIds.push(self.cards[index].id);
+          }
         }
       }
     };
+
+    // this.addItem = function(index){
+    //   if(self.haves.length === 0){
+    //     self.haves.push(self.cards[index]);
+    //     self.cardIds.push(self.cards[index].id);
+    //   } else {
+    //     var duplicate = false;
+    //     self.haves.some(function (value) {
+    //       var tempId = self.cards[index].id;
+    //       if (value.id === tempId) {
+    //         duplicate = true;
+    //       }
+    //     });
+    //     if (duplicate === false) {
+    //       self.haves.push(self.cards[index]);
+    //       self.cardIds.push(self.cards[index].id);
+    //       console.log(self.cardIds)
+    //
+    //     }
+    //   }
+    // };
+
+    // Only one checkbox `checked` at a time
+    $('.checkbox').on('change', function(){
+      $('.checkbox').not(this).prop('checked', false);
+    });
 
     this.removeItem = function(index){
       for (var i = 0; i < self.haves.length; i++) {
@@ -75,7 +117,8 @@ angular.module('mtgCentral')
 
       // Update the authdUser's information in Firebase
       user.update({
-        haves: self.cardIds
+        wants: self.wantIds,
+        haves: self.haveIds
       });
     };
 }]);

@@ -5,17 +5,49 @@
 
   <ul id="search">
     <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q" id="topsearch" placeholder="Search..." class="field" />
-    <li ng-repeat = "card in search.cards | limitTo: 10">
-      <p ng-click="search.addItem($index)">{{card.name}} | {{card.cardSetName}}</p>
+    <div id="haveBtn">
+      <p>Have:</p><input type='checkbox' class='checkbox' checked id='haveCheck'/>
+    </div>
+    <div id="wantBtn">
+      <p>Want:</p><input type='checkbox' class='checkbox'  id='wantCheck'/>
+    </div>
+    <li ng-repeat = "card in search.cards | limitTo: 10" style="list-style-type:none">
+      <p ng-click="search.addItem($index)">
+        <a href="">{{card.name}} | {{card.cardSetName}}</a>
+      </p>
     </li>
   </ul>
 
-  <ul id="haves">
-    <li ng-repeat="have in search.haves">
-      <p ng-click="search.removeItem(have.id)">
-        {{have.name}} | {{have.cardSetName}}
-      </p>
+  <ul id="have">
+    <li ng-repeat="have in search.haves" >
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+      {{have.name}} | {{have.cardSetName}}
+      <a href='' ng-click="search.removeItem(have.id)">
+        Remove
+      </a>
     </li>
-    <button ng-click="search.pushCards(app.user.facebook.id)">Push Stuff</button>
   </ul>
+
+  <ul id="want">
+    <li ng-repeat="want in search.wants" >
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+      {{want.name}} | {{want.cardSetName}}
+      <a href='' ng-click="search.removeItem(want.id)">
+        Remove
+      </a>
+    </li>
+  </ul>
+  <button id="save" ng-click="search.pushCards(app.user.facebook.id)">Save</button>
 </div>

@@ -16,17 +16,25 @@
   width: 300px;
   overflow: auto;
 }
-
-#search {
-  float: left;
-  width: 50%;
+#have{
+  background-color:lightgray;
+  position:fixed;
+  top:5%;
+  right:5%;
+  width:40%;
+  height:45%;
+  list-style-type:none;
+}
+#want{
+  background-color:gray;
+  position:fixed;
+  top:45%;
+  right:5%;
+  width:40%;
+  height:45%;
+  list-style-type:none;
 }
 
-#haves {
-  float: right;
-  background-color: #eee;
-}
-
-.search-cont {
-  margin-top: 2%;
+#save {
+  margin-left: 7%;
 }
