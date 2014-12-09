@@ -25,9 +25,9 @@ angular.module('mtgCentral')
 
   .controller('ListCtrl', function($firebase, FirebaseUrl){
 
-    var users = $firebase(FirebaseUrl.child('users').child('facebook:4898695241764')).$asObject();
+    //var users = $firebase(FirebaseUrl.child('users').child('facebook:4898695241764')).$asObject();
 
-    // users.$loaded().then(function(){
+    //users.$loaded().then(function(){
     //   angular.forEach(users, function(value, index){
     //     var change = 'That Guy';
     //
@@ -36,7 +36,7 @@ angular.module('mtgCentral')
     //     //Update the authdUser's information in Firebase
     //     user.update({
     //       Change: change
-    //     });
+        //});
     //   });
     // });
 

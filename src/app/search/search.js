@@ -44,10 +44,9 @@ angular.module('mtgCentral')
       if(list.length === 0){
         list.push(self.cards[index]);
         if (list === self.wants){
-          self.wantIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
+          self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
         } else {
-          self.haveIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
-
+          self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
         }
       }else{
         var duplicate = false;
@@ -60,20 +59,21 @@ angular.module('mtgCentral')
         if(duplicate === false){
           list.push(self.cards[index]);
           if (list === self.wants){
-            self.wantIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
+            self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
 
           } else {
-            self.haveIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
-
+            self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
           }
         }
       }
     };
 
+
     this.removeItemHave = function(index){
       for(var i = 0; i < self.haves.length; i++){
         if (self.haves[i].id == index){
-          delete self.haves[i];
+          self.haves.splice(i,1);
+          delete self.haveIds[i];
         }
       }
 
@@ -82,7 +82,8 @@ angular.module('mtgCentral')
     this.removeItemWant = function(index){
       for(var i = 0; i < self.wants.length; i++){
         if(self.wants[i].id == index){
-          delete self.wants[i];
+          self.wants.splice(i,1);
+          delete self.wantIds[i];
         }
       }
     };
@@ -92,7 +93,7 @@ angular.module('mtgCentral')
 
       // Update the authdUser's information in Firebase
       console.log(self.wantIds);
-      user.update({
+      user.set({
         wants: self.wantIds,
         haves: self.haveIds
       });
