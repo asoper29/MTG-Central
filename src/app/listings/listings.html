@@ -9,10 +9,10 @@
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="updated-head">Last Updated</h3>
 
     <ul class="list">
-      <li class="listing" ng-repeat="listing in list.listings">
+      <li class="listing" ng-repeat="user in users.listings">
         <a class="col-xs-4 col-sm-4 col-md-4 listAuthor">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{app.user.avatarUrl}}">
-          <p class="col-xs-8 col-sm-8 col-md-8" data-toggle="modal" data-target="#{{listing.id}}">{{listing.author}}</p>
+          <p class="col-xs-8 col-sm-8 col-md-8" data-toggle="modal" data-target="#{{user.fullName}}">{{listing.author}}</p>
         </a>
         <p id="desc" class="col-xs-4 col-sm-4 col-md-4">{{listing.description}}</p>
         <p id="date" class="col-xs-4 col-sm-4 col-md-4">{{listing.updated}}</p>

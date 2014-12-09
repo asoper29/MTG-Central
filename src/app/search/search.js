@@ -73,7 +73,7 @@ angular.module('mtgCentral')
       for(var i = 0; i < self.haves.length; i++){
         if (self.haves[i].id == index){
           self.haves.splice(i,1);
-          delete self.haveIds[i];
+          delete self.haveIds[index];
         }
       }
 
@@ -83,7 +83,7 @@ angular.module('mtgCentral')
       for(var i = 0; i < self.wants.length; i++){
         if(self.wants[i].id == index){
           self.wants.splice(i,1);
-          delete self.wantIds[i];
+          delete self.wantIds[index];
         }
       }
     };
@@ -93,7 +93,7 @@ angular.module('mtgCentral')
 
       // Update the authdUser's information in Firebase
       console.log(self.wantIds);
-      user.set({
+      user.update({
         wants: self.wantIds,
         haves: self.haveIds
       });

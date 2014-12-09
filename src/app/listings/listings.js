@@ -2,51 +2,15 @@
 
 angular.module('mtgCentral')
 
-  // .factory('HavesSearch', [function(){
-  //       var searchString =
-  //       $.ajax({
-  //         url: "http://api.mtgdb.info/cards/" + searchString,
-  //         success: function(data) {
-  //           deffered.resolve(data);
-  //         }
-  //       });
-  //     }
-  //     return deffered.promise;
-  //   };
-  //   return (SearchSvc);
-  // }])
+  .factory('GetUsers', function($firebase, FirebaseUrl){
+    return $firebase(FirebaseUrl.child('users')).$asObject();
+  })
 
-
-  // .factory('GetUsers', ['FirebaseUrl', '$firebase', function (FirebaseUrl, $firebase){
-  //   console.log($firebase(FirebaseUrl.child('users')).$asObject());
-  //   console.log(FirebaseUrl.child('users'));
-  //   return $firebase(FirebaseUrl.child('users')).$asObject();
-  // }])
-
-  .controller('ListCtrl', function($firebase, FirebaseUrl){
-
-    //var users = $firebase(FirebaseUrl.child('users').child('facebook:4898695241764')).$asObject();
-
-    //users.$loaded().then(function(){
-    //   angular.forEach(users, function(value, index){
-    //     var change = 'That Guy';
-    //
-    //     var user = FirebaseUrl.child('users').child(value.uid)
-    //
-    //     //Update the authdUser's information in Firebase
-    //     user.update({
-    //       Change: change
-        //});
-    //   });
-    // });
-
-    // syncObject = sync.$asObject()
-
-    // console.log(sync);
-
+  .controller('ListCtrl', function(GetUsers){
     var self = this;
     this.userHaves = [];
-
+    this.users = GetUsers;
+    console.log(this.users);
 
     // TODO: Add a quantity array and cards array to haves.
     // ref.orderByChild("haves").limitToLast(1)
