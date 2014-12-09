@@ -65,8 +65,8 @@ angular.module('mtgCentral')
     * Then create a child of the users collection named after the
     * authdUser's Facebook ID
     */
-    var user = FirebaseUrl.child('users').child(authdUser.facebook.id);
-
+    var user = FirebaseUrl.child('users').child(authdUser.uid);
+    
     // Update the authdUser's information in Firebase
     user.update({
       uid: authdUser.uid,
@@ -78,7 +78,7 @@ angular.module('mtgCentral')
     // Set user to the object reference of authdUser
     user = $firebase(FirebaseUrl
       .child('users')
-      .child(authdUser.facebook.id)
+      .child(authdUser.uid)
     ).$asObject();
 
     return user;

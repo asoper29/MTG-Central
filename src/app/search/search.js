@@ -6,43 +6,31 @@ angular.module('mtgCentral')
     function SearchSvc() {}
     SearchSvc.prototype.searchByName = function(searchString) {
       // TODO: Figure out the best way to add a delay
-      var deferred = $q.defer();
-
-      $http.get("http://api.mtgdb.info/search/" + searchString).success(function(data){
-        deferred.resolve(data);
-      });
-
-      return deferred.promise;
-
-        //return $http.get("http://api.mtgdb.info/search/" + searchString);
-    };
-    return (SearchSvc);
-  })
+       return $http.get("http://api.mtgdb.info/search/" + searchString);
+      };
+      return (SearchSvc);
+    })
 
 
-  .controller('SearchCtrl', ['SearchSvc', 'FirebaseUrl', '$scope', function(SearchSvc, FirebaseUrl, $scope){
+  .controller('SearchCtrl', ['SearchSvc', 'FirebaseUrl', '$scope',
+  function(SearchSvc, FirebaseUrl, $scope){
     var self = this;
 
     var searchSvc = new SearchSvc();
 
-    this.wantIds = [];
-    this.haveIds = [];
+    this.wantIds = {};
+    this.haveIds = {};
 
     this.wants = [];
     this.haves = [];
-    // TODO: var badSets = ['badSet'];
 
     this.searchByName = function(){
       self.cards = [];
       if ($scope.searchForm.length >= 3) {
-        searchSvc.searchByName($scope.searchForm).then(function(data){
-          data.forEach(function(card){
-            // TODO: Create an object of known online only sets and compare the set name
-            // To the object and remove those results
-            self.cards.push(card);
+        searchSvc.searchByName($scope.searchForm).success(function(data){
+            self.cards = data;
           });
-        });
-      }
+       }
     };
 
     this.addItem = function(index){
@@ -56,9 +44,10 @@ angular.module('mtgCentral')
       if(list.length === 0){
         list.push(self.cards[index]);
         if (list === self.wants){
-          self.wantIds.push(self.cards[index].id);
+          self.wantIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
         } else {
-          self.haveIds.push(self.cards[index].id);
+          self.haveIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
+
         }
       }else{
         var duplicate = false;
@@ -71,9 +60,11 @@ angular.module('mtgCentral')
         if(duplicate === false){
           list.push(self.cards[index]);
           if (list === self.wants){
-            self.wantIds.push(self.cards[index].id);
+            self.wantIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
+
           } else {
-            self.haveIds.push(self.cards[index].id);
+            self.haveIds[self.cards[index].id] ={id:self.cards[index].id, qty:1} ;
+
           }
         }
       }
@@ -82,7 +73,7 @@ angular.module('mtgCentral')
     this.removeItemHave = function(index){
       for(var i = 0; i < self.haves.length; i++){
         if (self.haves[i].id == index){
-          self.haves.splice(i,1);
+          delete self.haves[i];
         }
       }
 
@@ -91,7 +82,7 @@ angular.module('mtgCentral')
     this.removeItemWant = function(index){
       for(var i = 0; i < self.wants.length; i++){
         if(self.wants[i].id == index){
-          self.wants.splice(i,1);
+          delete self.wants[i];
         }
       }
     };
@@ -100,6 +91,7 @@ angular.module('mtgCentral')
       var user = FirebaseUrl.child('users').child(id);
 
       // Update the authdUser's information in Firebase
+      console.log(self.wantIds);
       user.update({
         wants: self.wantIds,
         haves: self.haveIds

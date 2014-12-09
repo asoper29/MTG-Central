@@ -25,18 +25,20 @@ angular.module('mtgCentral')
 
   .controller('ListCtrl', function($firebase, FirebaseUrl){
 
-    var ref = new Firebase("https://mtg-central.firebaseio.com/");
+    var users = $firebase(FirebaseUrl.child('users').child('facebook:4898695241764')).$asObject();
 
-    var sync = $firebase(ref)
-
-    var syncArray = sync.$asObject()
-
-    syncArray.$loaded().then(function(){
-      console.log(syncArray.users)
-      angular.forEach(syncArray.users, function(value, index){
-        console.log(value.haves)
-      })
-    })
+    // users.$loaded().then(function(){
+    //   angular.forEach(users, function(value, index){
+    //     var change = 'That Guy';
+    //
+    //     var user = FirebaseUrl.child('users').child(value.uid)
+    //
+    //     //Update the authdUser's information in Firebase
+    //     user.update({
+    //       Change: change
+    //     });
+    //   });
+    // });
 
     // syncObject = sync.$asObject()
 
