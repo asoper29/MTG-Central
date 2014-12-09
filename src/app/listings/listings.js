@@ -3,7 +3,7 @@
 angular.module('mtgCentral')
 
   .factory('GetUsers', function($firebase, FirebaseUrl){
-    return $firebase(FirebaseUrl.child('users')).$asObject();
+    return $firebase(FirebaseUrl.child('users')).$asArray();
   })
 
   .controller('ListCtrl', function(GetUsers){

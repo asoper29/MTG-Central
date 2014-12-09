@@ -33,39 +33,40 @@ angular.module('mtgCentral')
        }
     };
 
-    this.addItem = function(index){
+    this.addItem = function(card){
       var list;
-      // See what check box has been checked
-      if ($('#haveCheck').prop('checked')){
-        list = self.haves;
-      } else {
-        list = self.wants;
-      }
-      if(list.length === 0){
-        list.push(self.cards[index]);
-        if (list === self.wants){
-          self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-        } else {
-          self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-        }
-      }else{
-        var duplicate = false;
-        list.some(function(value){
-          var tempId = self.cards[index].id;
-          if(value.id === tempId){
-            duplicate = true;
-          }
-        });
-        if(duplicate === false){
-          list.push(self.cards[index]);
-          if (list === self.wants){
-            self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-
-          } else {
-            self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-          }
-        }
-      }
+      console.log(card);
+      // // See what check box has been checked
+      // if ($('#haveCheck').prop('checked')){
+      //   list = self.haves;
+      // } else {
+      //   list = self.wants;
+      // }
+      // if(list.length === 0){
+      //   list.push(self.cards[index]);
+      //   if (list === self.wants){
+      //     self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
+      //   } else {
+      //     self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
+      //   }
+      // }else{
+      //   var duplicate = false;
+      //   list.some(function(value){
+      //     var tempId = self.cards[index].id;
+      //     if(value.id === tempId){
+      //       duplicate = true;
+      //     }
+      //   });
+      //   if(duplicate === false){
+      //     list.push(self.cards[index]);
+      //     if (list === self.wants){
+      //       self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
+      //
+      //     } else {
+      //       self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
+      //     }
+      //   }
+      // }
     };
 
 
