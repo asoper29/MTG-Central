@@ -6,23 +6,26 @@ angular.module('mtgCentral')
     function SearchSvc() {}
     SearchSvc.prototype.searchByName = function(searchString) {
       // TODO: Figure out the best way to add a delay
-       return $http.get("http://api.mtgdb.info/search/" + searchString);
+       return $http.get('http://api.mtgdb.info/search/' + searchString);
       };
       return (SearchSvc);
     })
 
 
-  .controller('SearchCtrl', ['SearchSvc', 'FirebaseUrl', '$scope',
-  function(SearchSvc, FirebaseUrl, $scope){
+  .controller('SearchCtrl',
+  function(Auth, SearchSvc, FirebaseUrl, $scope, $firebase){
     var self = this;
 
     var searchSvc = new SearchSvc();
 
-    this.wantIds = {};
-    this.haveIds = {};
+    Auth.onAuth(function(user){
+      self.user = user;
+    });
 
-    this.wants = [];
-    this.haves = [];
+    self.user.$loaded(function(){
+      self.haves = $firebase(FirebaseUrl.child('usercards').child(self.user.uid).child('have')).$asObject();
+      self.wants = $firebase(FirebaseUrl.child('usercards').child(self.user.uid).child('want')).$asObject();
+    });
 
     this.searchByName = function(){
       self.cards = [];
@@ -33,70 +36,38 @@ angular.module('mtgCentral')
        }
     };
 
-    this.addItem = function(card){
-      var list;
-      console.log(card);
-      // // See what check box has been checked
-      // if ($('#haveCheck').prop('checked')){
-      //   list = self.haves;
-      // } else {
-      //   list = self.wants;
-      // }
-      // if(list.length === 0){
-      //   list.push(self.cards[index]);
-      //   if (list === self.wants){
-      //     self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-      //   } else {
-      //     self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-      //   }
-      // }else{
-      //   var duplicate = false;
-      //   list.some(function(value){
-      //     var tempId = self.cards[index].id;
-      //     if(value.id === tempId){
-      //       duplicate = true;
-      //     }
-      //   });
-      //   if(duplicate === false){
-      //     list.push(self.cards[index]);
-      //     if (list === self.wants){
-      //       self.wantIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-      //
-      //     } else {
-      //       self.haveIds[self.cards[index].id] = {id:self.cards[index].id, qty:1, name:self.cards[index].name , cardSetName:self.cards[index].cardSetName} ;
-      //     }
-      //   }
-      // }
-    };
-
-
-    this.removeItemHave = function(index){
-      for(var i = 0; i < self.haves.length; i++){
-        if (self.haves[i].id == index){
-          self.haves.splice(i,1);
-          delete self.haveIds[index];
-        }
-      }
-
-    };
-
-    this.removeItemWant = function(index){
-      for(var i = 0; i < self.wants.length; i++){
-        if(self.wants[i].id == index){
-          self.wants.splice(i,1);
-          delete self.wantIds[index];
-        }
-      }
-    };
-
-    this.pushCards = function(id){
-      var user = FirebaseUrl.child('users').child(id);
+    this.addItemHave = function(card){
+      var cardUsers = FirebaseUrl.child('cardusers').child(card.id).child('have').child(self.user.uid);
+      var userCards = FirebaseUrl.child('usercards').child(self.user.uid).child('have').child(card.id);
 
       // Update the authdUser's information in Firebase
-      console.log(self.wantIds);
-      user.update({
-        wants: self.wantIds,
-        haves: self.haveIds
+      cardUsers.update({
+        cond: 'NM',
+        qty: 1
+      });
+
+      userCards.update({
+        name: card.name,
+        cardSetName: card.cardSetName,
+        cond: 'NM',
+        qty: 1
       });
     };
-}]);
+
+
+    this.removeItemHave = function(id){
+      var cardUsers = FirebaseUrl.child('cardusers').child(id).child('have').child(self.user.uid);
+      var userCards = FirebaseUrl.child('usercards').child(self.user.uid).child('have').child(id);
+
+      cardUsers.remove();
+      userCards.remove();
+    };
+
+    this.removeItemWant = function(id){
+      var cardUsers = FirebaseUrl.child('cardusers').child(id).child('want').child(self.user.uid);
+      var userCards = FirebaseUrl.child('usercards').child(self.user.uid).child('want').child(id);
+
+      cardUsers.remove();
+      userCards.remove();
+    };
+});

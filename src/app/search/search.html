@@ -9,14 +9,14 @@
 
       Want:<input type='radio'name='hW' value='Want' >
     <li ng-repeat = "card in search.cards | limitTo: 10" style="list-style-type:none">
-      <p ng-click="search.addItem(search.cards[$index])">
+      <p ng-click="search.addItemHave(search.cards[$index])">
         <a href="">{{card.name}} | {{card.cardSetName}}</a>
       </p>
     </li>
   </ul>
 
   <ul id="have">
-    <li ng-repeat="have in search.haves" >
+    <li ng-repeat="(id, have) in search.haves" >
       <select>
         <option>1</option>
         <option>2</option>
@@ -25,14 +25,14 @@
         <option>5+</option>
       </select>
       {{have.name}} | {{have.cardSetName}}
-      <a href='' ng-click="search.removeItemHave(have.id)" id="{{have.id}}-have">
+      <a href='' ng-click="search.removeItemHave(id)">
         Remove
       </a>
     </li>
   </ul>
 
   <ul id="want">
-    <li ng-repeat="want in search.wants" >
+    <li ng-repeat="(id, have) in search.wants" >
       <select>
         <option>1</option>
         <option>2</option>
@@ -41,10 +41,10 @@
         <option>5+</option>
       </select>
       {{want.name}} | {{want.cardSetName}}
-      <a href='' ng-click="search.removeItemWant(want.id)">
+      <a href='' ng-click="search.removeItemWant(id)">
         Remove
       </a>
     </li>
   </ul>
-  <button id="save" ng-click="search.pushCards(app.user.uid)">Save</button>
+  <button id="save" ng-click="search.pushCards(search.user.uid)">Save</button>
 </div>
