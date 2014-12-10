@@ -1,39 +1,30 @@
 <div class="col-md-10 search-cont" ng-controller='SearchCtrl as search'>
-  <ul id="search">
-    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q" id="topsearch" placeholder="Search..." class="field" />
-      Have:<input type='radio' name='hW' value='Have' checked id='haveCheck'>
+  <!--[if lt IE 10]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
 
-      Want:<input type='radio'name='hW' value='Want' >
+  <ul id="search">
+    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
+    id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
+
     <li ng-repeat = "card in search.cards | limitTo: 10" style="list-style-type:none">
-      <p ng-click="search.addItemHave(search.cards[$index])">
-        <a href="">{{card.name}} | {{card.cardSetName}}</a>
-      </p>
+        <h4>{{card.name}} | {{card.cardSetName}}</h4>
+        <button class="addHave" ng-click='search.addItemHave(search.cards[$index])'>Add Haves</button>
+        <button class="addWant" ng-click='search.addItemWant(search.cards[$index])'>Add Wants</button>
     </li>
   </ul>
 
   <ul id="have">
     <li ng-repeat="(id, have) in search.haves" >
-      <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5+</option>
-      </select>
+
       {{have.name}} | {{have.cardSetName}}
       <button ng-click="search.removeItemHave(id)"> Remove </button>
     </li>
   </ul>
 
   <ul id="want">
-    <li ng-repeat="(id, have) in search.wants" >
-      <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5+</option>
-      </select>
+    <li ng-repeat="(id, want) in search.wants" >
+
       {{want.name}} | {{want.cardSetName}}
       <button ng-click="search.removeItemWant(id)"> Remove </button>
     </li>

@@ -38,3 +38,7 @@
 #save {
   margin-left: 7%;
 }
+
+.addHave, .addWant {
+  display: inline;
+}
