@@ -45,7 +45,7 @@ body {
 #main {
   position: absolute;
   text-align: center;
-  top: 55%;
+  top: 85%;
   left: 8%;
   height: 900px;
   background-color: #222222;
@@ -110,7 +110,7 @@ body {
   text-align: center;
   top: 18%;
   left: 8%;
-  height: 200px;
+  height: 400px;
   background-color: #222222;
 }
 
@@ -127,6 +127,11 @@ body {
 #search > div > label {
   color: #555;
   margin-right: 2pt;
+}
+
+#results {
+  margin-right: 4%;
+  margin-top: 2pt;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

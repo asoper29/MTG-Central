@@ -1,3 +1,50 @@
-<div id="test">
-  TESTING PROFILE
+
+<div ng-hide="app.user">
+</div>
+<div ng-show="app.user">
+  <button class="logout btn btn-danger" ng-click="app.logout()"><h3>Log Out</h3></button>
+  <h1>MTG-Central</h1>
+  <hr>
+  <img id="userImg" src="{{app.user.avatarUrl}}"/>
+  <p>{{app.user.facebook.displayName}}</p>
+  <a ng-href="{{app.user.facebook.cachedUserProfile.link}}">Message On Facebook</a>
+  <hr>
+
+
+</div>
+
+
+<div class="search-cont" ng-controller='SearchCtrl as search'>
+  <h2>Trade Lists</h2>
+
+  <ul id="search" class='list-group col-xs-4 col-sm-4 col-md-4'>
+    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
+    id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
+    <li ng-repeat = "card in search.cards | limitTo: 10"
+    style="list-style-type:none" class='list-group-item'>
+
+      <h4>{{card.name}} | {{card.cardSetName}} </h4>
+      <a class="haveAdd" ng-click='search.addItemHave(search.cards[$index])'>Have</a>
+      <a class="wantAdd" ng-click='search.addItemWant(search.cards[$index])'>Want</a>
+
+    </li>
+  </ul>
+
+  <ul id="have" class="col-xs-4 col-sm-4 col-md-4">
+    <h3>Haves</h3>
+    <li class="listItem" ng-repeat="(id, have) in search.haves" >
+
+      {{have.name}} | {{have.cardSetName}}
+      <a ng-click="search.removeItemHave(id)"> Remove </a>
+    </li>
+  </ul>
+
+  <ul id="want" class="col-xs-4 col-sm-4 col-md-4">
+    <h3>Wants</h3>
+    <li class="listItem" ng-repeat="(id, want) in search.wants" >
+
+      {{want.name}} | {{want.cardSetName}}
+      <a ng-click="search.removeItemWant(id)"> Remove </a>
+    </li>
+  </ul>
 </div>

@@ -1,5 +1,131 @@
-#test {
+body {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  background-color: #252528;
+}
+
+.logout {
+  float: right;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  margin-left: 182px;
+  margin-top: 22px;
+  border-radius: 5px;
+}
+
+body button h3 {
+  font-size: 16px;
+  line-height: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body header {
+  height: 93.778px;
+  background-color: black;
+}
+
+body header a {
+  padding-bottom: 3px;
+}
+
+#userImg {
   height: 200px;
-  width: 500px;
-  background-color: red;
+  width: 200px;
+  margin-left: 10px;
+  border: 5px solid white;
+}
+
+
+
+body div:nth-child(3) h1 {
+  color: white;
+  text-align: left;
+  padding-top: 15px;
+  font-family: "Cinzel", serif;
+  margin-left: 30px;
+}
+
+body div:nth-child(3) h2 {
+  color: white;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 50px;
+}
+
+body div:nth-child(3) p {
+  color: white;
+  padding-left: 20px;
+}
+
+
+#mainContainer > div:nth-child(2) > button {
+  margin-right: 46px;
+}
+
+.search-cont {
+  height: 750pt;
+}
+
+#topsearch{
+  width: 100%;
+}
+
+#search {
+  font-size: 10pt;
+}
+
+#search > li > h4 {
+  font-size: 10pt;
+  text-align: center;
+}
+
+.wantAdd {
+  margin-left: 25%;
+}
+
+.haveAdd {
+  margin-left: 25%;
+}
+
+.listItem {
+  font-size: 10pt;
+}
+
+.listItem > a {
+font-size: 8pt;
+}
+
+#have{
+  height: 50%;
+  background-color:black;
+  list-style-type:none;
+  overflow:scroll;
+  color:darkgray;
+  border:1px solid white;
+  line-height:30px;
+}
+#want{
+  height: 50%;
+  border:1px solid white;
+  background-color:rgb(50,50,50);
+  list-style-type:none;
+  overflow:scroll;
+  color:darkgray;
+  line-height:30px;
+}
+.list-group-item{
+  width:100%
+}
+.list-group-item:nth-child(odd){
+  background-color:black;
+  color:darkgray;
+}
+.list-group-item:nth-child(even){
+  background-color:rgb(50,50,50);
+  color:darkgray;
+}
+button{
+  background-color:darkgray;
+  color:black;
 }

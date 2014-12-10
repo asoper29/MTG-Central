@@ -1,9 +1,12 @@
-.ui-autocomplete-loading {
-  background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+body{
+  background-color:rgb(34,34,34);
 }
-
 #card {
   width: 25em;
+}
+
+#search {
+  margin-top: 8pt;
 }
 
 #div-two {
@@ -17,28 +20,43 @@
   overflow: auto;
 }
 #have{
-  background-color:lightgray;
+  background-color:black;
   position:fixed;
   top:5%;
   right:5%;
   width:40%;
   height:45%;
   list-style-type:none;
+  overflow:scroll;
+  color:darkgray;
+  border:1px solid white;
+  line-height:30px;
 }
 #want{
-  background-color:gray;
+  border:1px solid white;
+  background-color:rgb(50,50,50);
   position:fixed;
-  top:45%;
+  top:55%;
   right:5%;
   width:40%;
   height:45%;
   list-style-type:none;
+  overflow:scroll;
+  color:darkgray;
+  line-height:30px;
 }
-
-#save {
-  margin-left: 7%;
+.list-group-item{
+  width:45%;
 }
-
-.addHave, .addWant {
-  display: inline;
+.list-group-item:nth-child(odd){
+  background-color:black;
+  color:darkgray;
+}
+.list-group-item:nth-child(even){
+  background-color:rgb(50,50,50);
+  color:darkgray;
+}
+button{
+  background-color:darkgray;
+  color:black;
 }

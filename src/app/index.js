@@ -1,7 +1,7 @@
 'use strict';
 
 // Create our main mtgCentral module and injecting dependencies
-angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'uiRouterStyles', 'firebase'])
+angular.module('mtgCentral', ['ui.router', 'uiRouterStyles', 'firebase'])
 
   // Declaring a constant variable for the base url
   .constant('CONFIG', {
@@ -34,7 +34,16 @@ angular.module('mtgCentral', ['ngCookies', 'ngSanitize', 'restangular', 'ui.rout
         css: 'app/listings/listings.css'
       }
     })
-    
+
+    .state('profile:id',{
+      url: '/profile/:id',
+      templateUrl: 'app/profile/profile.html',
+      controller: 'SearchCtrl',
+      data: {
+        css: 'app/profile/profile.css'
+      }
+    })
+
     .state('search', {
       url: '/search',
       templateUrl: 'app/search/search.html',

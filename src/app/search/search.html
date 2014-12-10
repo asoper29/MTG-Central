@@ -2,31 +2,34 @@
   <!--[if lt IE 10]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
+  id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
+  <ul id="search" class='list-group'>
+    <li ng-repeat = "card in search.cards | limitTo: 10"
+    style="list-style-type:none" class='list-group-item'>
 
-  <ul id="search">
-    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
-    id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
+    <h4>{{card.name}} | {{card.cardSetName}} </h4>
+    <button ng-click='search.addItemHave(search.cards[$index])'>Add Haves  </button>
+    <button ng-click='search.addItemWant(search.cards[$index])'>Add Wants</button>
 
-    <li ng-repeat = "card in search.cards | limitTo: 10" style="list-style-type:none">
-        <h4>{{card.name}} | {{card.cardSetName}}</h4>
-        <button class="addHave" ng-click='search.addItemHave(search.cards[$index])'>Add Haves</button>
-        <button class="addWant" ng-click='search.addItemWant(search.cards[$index])'>Add Wants</button>
-    </li>
-  </ul>
+  </li>
+</ul>
 
-  <ul id="have">
-    <li ng-repeat="(id, have) in search.haves" >
+<ul id="have">
+  <h3>Haves</h3>
+  <li ng-repeat="(id, have) in search.haves" >
 
-      {{have.name}} | {{have.cardSetName}}
-      <button ng-click="search.removeItemHave(id)"> Remove </button>
-    </li>
-  </ul>
+    {{have.name}} | {{have.cardSetName}}
+    <a ng-click="search.removeItemHave(id)"> Remove </a>
+  </li>
+</ul>
 
-  <ul id="want">
-    <li ng-repeat="(id, want) in search.wants" >
+<ul id="want">
+  <h3>Wants</h3>
+  <li ng-repeat="(id, want) in search.wants" >
 
-      {{want.name}} | {{want.cardSetName}}
-      <button ng-click="search.removeItemWant(id)"> Remove </button>
-    </li>
-  </ul>
+    {{want.name}} | {{want.cardSetName}}
+    <a ng-click="search.removeItemWant(id)"> Remove </a>
+  </li>
+</ul>
 </div>

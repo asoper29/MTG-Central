@@ -21,6 +21,42 @@ angular.module('mtgCentral')
 
   var auth = $firebaseAuth(FirebaseUrl);
 
+  /**
+  * Tranform the `authdUser` object from `$firebaseAuth` into a full User
+  * record in the `/users` collection.
+  *
+  * @param {Object} authdUser from $firebaseAuth.getAuth()
+  * @return {Object} from $firebase.$asObject()
+  */
+  function updateUser(authdUser){
+    if ( authdUser === null ){
+      return null;
+    }
+
+    /**
+    * Create a reference to the users collection within Firebase
+    * Then create a child of the users collection named after the
+    * authdUser's Facebook ID
+    */
+    var user = FirebaseUrl.child('users').child(authdUser.uid);
+
+    // Update the authdUser's information in Firebase
+    user.update({
+      uid: authdUser.uid,
+      facebook: authdUser.facebook,
+      fullName: authdUser.facebook.displayName,
+      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+    });
+
+    // Set user to the object reference of authdUser
+    user = $firebase(FirebaseUrl
+      .child('users')
+      .child(authdUser.uid)
+    ).$asObject();
+
+    return user;
+  } // END updateUser
+
   return {
 
     /**
@@ -48,41 +84,7 @@ angular.module('mtgCentral')
     }
   }; // END service
 
-  /**
-  * Tranform the `authdUser` object from `$firebaseAuth` into a full User
-  * record in the `/users` collection.
-  *
-  * @param {Object} authdUser from $firebaseAuth.getAuth()
-  * @return {Object} from $firebase.$asObject()
-  */
-  function updateUser(authdUser){
-    if ( authdUser === null ){
-      return null;
-    }
 
-    /**
-    * Create a reference to the users collection within Firebase
-    * Then create a child of the users collection named after the
-    * authdUser's Facebook ID
-    */
-    var user = FirebaseUrl.child('users').child(authdUser.uid);
-    
-    // Update the authdUser's information in Firebase
-    user.update({
-      uid: authdUser.uid,
-      facebook: authdUser.facebook,
-      fullName: authdUser.facebook.displayName,
-      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
-    });
-
-    // Set user to the object reference of authdUser
-    user = $firebase(FirebaseUrl
-      .child('users')
-      .child(authdUser.uid)
-    ).$asObject();
-
-    return user;
-  } // END updateUser
 }) // END factory(Auth)
 
 /**

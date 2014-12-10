@@ -8,29 +8,29 @@
     <ul id="results">
       <li ng-repeat = "card in list.cards | limitTo: 10" style="list-style-type:none">
         <p ng-click="list.searchItem(list.cards[$index])">
-          <a href="">{{card.name}}</a>
+          <a href="">{{card.name}} | {{card.cardSetName}}</a>
         </p>
       </li>
     </ul>
-    <h4><a href="index.html#/list#">Back to top</a></h4>
+    <!-- <h4><a href="index.html#/list#">Back to top</a></h4> -->
   </section>
 
   <section class="col-xs-10 col-sm-10 col-md-10" id="main">
-    <h1 class="col-xs-12 col-sm-12 col-md-12" id="main-head">Listings</h1>
+    <h1 class="col-xs-12 col-sm-12 col-md-12" id="main-head">Search Results</h1>
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="user-head">User</h3>
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="desc-head">Card</h3>
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="updated-head">Last Updated</h3>
 
     <ul class="list">
       <li class="listing" ng-repeat="(uid, user) in list.users">
-        <a class="col-xs-4 col-sm-4 col-md-4 listAuthor">
+        <a ng-href="/index.html#/profile/{{user.id}}" class="col-xs-4 col-sm-4 col-md-4 listAuthor">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{user.facebook.avatarUrl}}">
           <p class="col-xs-8 col-sm-8 col-md-8">{{user.facebook.fullName}}</p>
         </a>
-        <!-- <section class="card">
-          <p class="cardName col-xs-4 col-sm-4 col-md-4"></p>
-          <p class="cardQty col-xs-4 col-sm-4 col-md-4"></p>
-        </section> -->
+        <section class="card col-xs-4 col-sm-4 col-md-4">
+          <p class="cardQty col-xs-4 col-sm-4 col-md-4">{{user.qty}}x</p>
+          <p class="cardName col-xs-8 col-sm-8 col-md-8">{{list.cardSearch}}</p>
+        </section>
       </li>
     </ul>
   </section>

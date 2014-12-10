@@ -31,7 +31,8 @@ angular.module('mtgCentral')
 
     this.searchItem = function(card) {
       $scope.searchForm = card.name;
-      self.users = $firebase(FirebaseUrl.child('cardusers').child(card.id).child('have')).$asObject();
+      self.cardSearch = card.name;
+      self.users = $firebase(FirebaseUrl.child('cardusers').child('haves').child(card.id)).$asObject();
       self.users.$loaded(function(){
       });
     };
