@@ -54,6 +54,24 @@ angular.module('mtgCentral')
       });
     };
 
+    this.addItemWant = function(card){
+      var cardUsers = FirebaseUrl.child('cardusers').child(card.id).child('want').child(self.user.uid);
+      var userCards = FirebaseUrl.child('usercards').child(self.user.uid).child('want').child(card.id);
+
+      // Update the authdUser's information in Firebase
+      cardUsers.update({
+        cond: 'NM',
+        qty: 1
+      });
+
+      userCards.update({
+        name: card.name,
+        cardSetName: card.cardSetName,
+        cond: 'NM',
+        qty: 1
+      });
+    };
+    
 
     this.removeItemHave = function(id){
       var cardUsers = FirebaseUrl.child('cardusers').child(id).child('have').child(self.user.uid);
