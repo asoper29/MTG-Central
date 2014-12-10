@@ -2,69 +2,37 @@
 
 <div class="container" ng-controller="ListCtrl as list">
   <img src="http://i.imgur.com/DCUum.jpg">
+  <section class="col-xs-10 col-sm-10 col-md-10" id="search">
+    <h3>Search:</h3>
+    <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="list.autoByName()" name="q" id="topsearch" placeholder="Card Name" class="field" />
+    <ul id="results">
+      <li ng-repeat = "card in list.cards | limitTo: 10" style="list-style-type:none">
+        <p ng-click="list.searchItem(list.cards[$index])">
+          <a href="">{{card.name}}</a>
+        </p>
+      </li>
+    </ul>
+    <h4><a href="index.html#/list#">Back to top</a></h4>
+  </section>
+
   <section class="col-xs-10 col-sm-10 col-md-10" id="main">
     <h1 class="col-xs-12 col-sm-12 col-md-12" id="main-head">Listings</h1>
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="user-head">User</h3>
-    <h3 class="col-xs-4 col-sm-4 col-md-4" id="desc-head">Description</h3>
+    <h3 class="col-xs-4 col-sm-4 col-md-4" id="desc-head">Card</h3>
     <h3 class="col-xs-4 col-sm-4 col-md-4" id="updated-head">Last Updated</h3>
 
     <ul class="list">
-      <li class="listing" ng-repeat="user in list.users">
+      <li class="listing" ng-repeat="(uid, user) in list.users">
         <a class="col-xs-4 col-sm-4 col-md-4 listAuthor">
-          <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{app.user.avatarUrl}}">
-          <p class="col-xs-8 col-sm-8 col-md-8" data-toggle="modal" data-target="#{{app.user.uid}}">{{user.fullName}}</p>
+          <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{user.facebook.avatarUrl}}">
+          <p class="col-xs-8 col-sm-8 col-md-8">{{user.facebook.fullName}}</p>
         </a>
-        <p id="desc" class="col-xs-4 col-sm-4 col-md-4">{{listing.description}}</p>
-        <p id="date" class="col-xs-4 col-sm-4 col-md-4">{{listing.updated}}</p>
-        <div id="{{listing.id}}" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Responsive</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <h4>{{listing.author}}</h4>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-              </div>
-              <div class="col-md-6">
-                <h4>{{listing.description}}</h4>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-                <p><input class="form-control" type="text"></p>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
+        <!-- <section class="card">
+          <p class="cardName col-xs-4 col-sm-4 col-md-4"></p>
+          <p class="cardQty col-xs-4 col-sm-4 col-md-4"></p>
+        </section> -->
       </li>
     </ul>
-  </section>
-  <section class="col-xs-10 col-sm-10 col-md-10" id="search">
-    <h3>Search By:</h3>
-    <p ng-repeat="userHave in list.userHaves">{{userHave}} | {{userHave.cardSetName}}</p>
-    <div id="col1" class="col-xs-6 col-sm-6 col-md-6">
-      <label for="card_name">Card Name</label></a>
-      <input type="text" id="card_name" name="card_name" placeholder="Black Lotus"></input>
-    </div>
-    <div id="col2" class="col-xs-6 col-sm-6 col-md-6">
-      <label for="set_name">Set Name</label>
-      <input type="text" id="set_name" name="set_name" placeholder="Alpha"></input>
-    </div>
-    <h4><a href="index.html#/list#">Back to top</a></h4>
   </section>
 </div>
 

@@ -42,6 +42,7 @@ angular.module('mtgCentral')
 
       // Update the authdUser's information in Firebase
       cardUsers.update({
+        facebook: {uid: self.user.uid, fullName: self.user.fullName, avatarUrl: self.user.avatarUrl}, 
         cond: 'NM',
         qty: 1
       });

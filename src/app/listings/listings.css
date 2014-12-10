@@ -45,7 +45,7 @@ body {
 #main {
   position: absolute;
   text-align: center;
-  top: 18%;
+  top: 55%;
   left: 8%;
   height: 900px;
   background-color: #222222;
@@ -108,7 +108,7 @@ body {
 #search {
   position: absolute;
   text-align: center;
-  top: 180%;
+  top: 18%;
   left: 8%;
   height: 200px;
   background-color: #222222;
