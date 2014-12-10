@@ -71,7 +71,7 @@ angular.module('mtgCentral')
         qty: 1
       });
     };
-    
+
 
     this.removeItemHave = function(id){
       var cardUsers = FirebaseUrl.child('cardusers').child(id).child('have').child(self.user.uid);

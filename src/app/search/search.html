@@ -25,9 +25,7 @@
         <option>5+</option>
       </select>
       {{have.name}} | {{have.cardSetName}}
-      <a href='' ng-click="search.removeItemHave(id)">
-        Remove
-      </a>
+      <button ng-click="search.removeItemHave(id)"> Remove </button>
     </li>
   </ul>
 
@@ -41,10 +39,7 @@
         <option>5+</option>
       </select>
       {{want.name}} | {{want.cardSetName}}
-      <a href='' ng-click="search.removeItemWant(id)">
-        Remove
-      </a>
+      <button ng-click="search.removeItemWant(id)"> Remove </button>
     </li>
   </ul>
-  <button id="save" ng-click="search.pushCards(search.user.uid)">Save</button>
 </div>
