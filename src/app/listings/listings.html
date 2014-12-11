@@ -23,7 +23,7 @@
 
     <ul class="list">
       <li class="listing" ng-repeat="(uid, user) in list.users">
-        <a ng-href="/index.html#/profile/{{user.id}}" class="col-xs-4 col-sm-4 col-md-4 listAuthor">
+        <a ui-sref="profile({ id: uid})" ng-click"app.clickedUser(user)" class="col-xs-4 col-sm-4 col-md-4 listAuthor">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{user.facebook.avatarUrl}}">
           <p class="col-xs-8 col-sm-8 col-md-8">{{user.facebook.fullName}}</p>
         </a>

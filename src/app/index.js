@@ -35,7 +35,7 @@ angular.module('mtgCentral', ['ui.router', 'uiRouterStyles', 'firebase'])
       }
     })
 
-    .state('profile:id',{
+    .state('profile',{
       url: '/profile/:id',
       templateUrl: 'app/profile/profile.html',
       controller: 'SearchCtrl',

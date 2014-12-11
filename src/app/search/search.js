@@ -13,8 +13,10 @@ angular.module('mtgCentral')
 
 
   .controller('SearchCtrl',
-  function(Auth, SearchSvc, FirebaseUrl, $scope, $firebase){
+  function(Auth, SearchSvc, FirebaseUrl, $scope, $firebase, $stateParams){
     var self = this;
+
+    this.currentUser = $firebase(FirebaseUrl.child('users').child($stateParams.id)).$asObject();
 
     var searchSvc = new SearchSvc();
 
@@ -23,8 +25,8 @@ angular.module('mtgCentral')
     });
 
     self.user.$loaded(function(){
-      self.haves = $firebase(FirebaseUrl.child('usercards').child(self.user.uid).child('haves')).$asObject();
-      self.wants = $firebase(FirebaseUrl.child('usercards').child(self.user.uid).child('wants')).$asObject();
+      self.haves = $firebase(FirebaseUrl.child('usercards').child($stateParams.id).child('haves')).$asObject();
+      self.wants = $firebase(FirebaseUrl.child('usercards').child($stateParams.id).child('wants')).$asObject();
     });
 
     this.searchByName = function(){

@@ -1,19 +1,16 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/">
-      <img src='favicon.ico'> MTG Central
-    </a>
+    <a class="navbar-brand" ui-sref="home">MTG-Central</a>
   </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
     <ul class="nav navbar-nav">
-      <li class="active"><a ng-href="#">Home</a></li>
-      <li><a ng-href="#">2</a></li>
-      <li><a ng-href="#">3</a></li>
+      <li><a ui-sref="list" ui-sref-active="active">Search</a></li>
+      <li><a ui-sref="profile({ id: app.user.uid})" ui-sref-active="active">My Profile</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <a ng-show="app.user" href="">{{app.user.facebook.displayName}}</a>
+      <button class="logout btn btn-danger" ng-show="app.user" ng-click="app.logout()">Log Out</button>
     </ul>
   </div>
 </nav>

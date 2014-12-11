@@ -1,26 +1,16 @@
 body {
   padding: 0;
+  font-family: "Cinzel", serif;
 }
 
-.navbar-header img {
-  height: 23pt;
+.logout {
+  position: relative;
+  right: 30%;
+  top: 6pt;
 }
 
-.navbar-brand {
-  padding-top: 10px;
-}
-
-.navbar-brand > img {
-  display: inline;
-}
-
-.navbar {
-  margin-bottom: 0px;
-}
-
-.navbar-nav.navbar-right:last-child {
-  padding: 10pt;
-  margin: 0;
+.active {
+  background-color: #111;
 }
 
 .container {

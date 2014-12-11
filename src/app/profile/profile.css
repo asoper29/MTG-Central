@@ -4,13 +4,45 @@ body {
   background-color: #252528;
 }
 
-.logout {
-  float: right;
-  font-family: "Cinzel", serif;
+.active {
+  background-color: #111;
+}
+
+#bgnd {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 180%;
+}
+
+header {
+  position: relative;
+  left: 39%;
+  margin: 8% 0 5% 0;
+  width: 22%;
+  height: 220pt;
+  background-color: rgb(34, 34, 34);
+  border-radius: 4px;
+}
+
+header > p {
+  color: white;
   text-align: center;
-  margin-left: 182px;
-  margin-top: 22px;
-  border-radius: 5px;
+  padding: 0;
+  margin: 10pt 0 0 0;
+}
+
+header > a {
+  margin-left: 20%;
+}
+
+.logout {
+  position: relative;
+  right: 30%;
+  top: 6pt;
 }
 
 body button h3 {
@@ -20,11 +52,6 @@ body button h3 {
   margin-bottom: 5px;
 }
 
-body header {
-  height: 93.778px;
-  background-color: black;
-}
-
 body header a {
   padding-bottom: 3px;
 }
@@ -32,8 +59,8 @@ body header a {
 #userImg {
   height: 200px;
   width: 200px;
-  margin-left: 10px;
-  border: 5px solid white;
+  margin-left: 13%;
+  margin-top: 10%;
 }
 
 
@@ -53,18 +80,8 @@ body div:nth-child(3) h2 {
   font-size: 50px;
 }
 
-body div:nth-child(3) p {
-  color: white;
-  padding-left: 20px;
-}
-
-
 #mainContainer > div:nth-child(2) > button {
   margin-right: 46px;
-}
-
-.search-cont {
-  height: 750pt;
 }
 
 #topsearch{
@@ -73,6 +90,7 @@ body div:nth-child(3) p {
 
 #search {
   font-size: 10pt;
+  padding: 0 2pt 0 2pt;
 }
 
 #search > li > h4 {
@@ -97,35 +115,32 @@ font-size: 8pt;
 }
 
 #have{
-  height: 50%;
-  background-color:black;
+  height: 412pt;
+  background-color: rgba(0,0,0,0.9);
   list-style-type:none;
   overflow:scroll;
   color:darkgray;
-  border:1px solid white;
   line-height:30px;
+  border-radius: 4px;
 }
 #want{
-  height: 50%;
-  border:1px solid white;
-  background-color:rgb(50,50,50);
+  height: 412pt;
+  border-radius: 4px;
+  background-color:rgba(34, 34, 34, 0.9);
   list-style-type:none;
   overflow:scroll;
   color:darkgray;
   line-height:30px;
 }
 .list-group-item{
+  border: none;
   width:100%
 }
 .list-group-item:nth-child(odd){
-  background-color:black;
+  background-color:rgba(0,0,0,0.9);
   color:darkgray;
 }
 .list-group-item:nth-child(even){
-  background-color:rgb(50,50,50);
+  background-color:rgba(34, 34, 34, 0.9);
   color:darkgray;
-}
-button{
-  background-color:darkgray;
-  color:black;
 }
