@@ -104,6 +104,11 @@ body {
   background-color: #222222;
 }
 
+.card {
+  margin-top: 1.5%;
+  font-size: 14pt;
+}
+
 #search > h3 {
   color: white;
   margin-bottom: 10pt;

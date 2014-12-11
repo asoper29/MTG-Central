@@ -1,7 +1,7 @@
 'use strict';
 
 // Create our main mtgCentral module and injecting dependencies
-angular.module('mtgCentral', ['ui.router', 'uiRouterStyles', 'firebase'])
+angular.module('mtgCentral', ['ui.router', 'firebase'])
 
   // Declaring a constant variable for the base url
   .constant('CONFIG', {
@@ -19,39 +19,26 @@ angular.module('mtgCentral', ['ui.router', 'uiRouterStyles', 'firebase'])
     .state('home', {
       url: '/',
       templateUrl: 'app/main/main.html',
-      controller: 'MainCtrl',
-      data: {
-        css: 'app/main/mainMTG.css'
-      }
+      controller: 'MainCtrl'
     })
 
     // Route to show the listings
     .state('list', {
       url: '/list',
       templateUrl: 'app/listings/listings.html',
-      controller: 'ListCtrl',
-      data: {
-        css: 'app/listings/listings.css'
-      }
+      controller: 'ListCtrl'
     })
 
     .state('profile',{
       url: '/profile/:id',
       templateUrl: 'app/profile/profile.html',
-      controller: 'SearchCtrl',
-      data: {
-        css: 'app/profile/profile.css'
-      }
+      controller: 'SearchCtrl'
     })
 
     .state('search', {
       url: '/search',
       templateUrl: 'app/search/search.html',
-      controller: 'SearchCtrl',
-      data: {
-        css: 'app/search/search.css'
-      }
-
+      controller: 'SearchCtrl'
     });
 
     // Catch all for routes

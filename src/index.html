@@ -11,13 +11,13 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- user added stylesheets -->
-
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css({.tmp,src}) styles/app.css -->
-    <!-- <link rel="stylesheet" href="app/index.css"> -->
+    <link href="./app/listings/userlist.css" rel="stylesheet" type="text/css">
+    <link href="./app/profile/profilepage.css" rel="stylesheet" type="text/css">
     <!-- endbuild -->
 
     <!-- build:js scripts/modernizr.js -->
@@ -39,15 +39,14 @@
     <script src="../bower_components/firebase/firebase.js"></script>
     <script src="../bower_components/angularfire/dist/angularfire.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,src}) scripts/app.js -->
-    <script src="app/index.js"></script>
-    <script src="app/main/main.js"></script>
-    <script src="app/listings/listings.js"></script>
-    <script src="app/search/search.js"></script>
+    <!-- build:js({src,.tmp}) scripts/app.js -->
+    <script src="./app/index.js"></script>
+    <script src="./app/main/index.js"></script>
+    <script src="./app/listings/index.js"></script>
+    <script src="./app/search/index.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
