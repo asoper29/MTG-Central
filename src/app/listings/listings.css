@@ -37,7 +37,7 @@ body {
   text-align: center;
   top: 85%;
   left: 8%;
-  height: 900px;
+  height: auto;
   background-color: #222222;
   padding: 0;
   margin: 0;
@@ -100,7 +100,7 @@ body {
   text-align: center;
   top: 18%;
   left: 8%;
-  height: 400px;
+  height: 325pt;
   background-color: #222222;
 }
 
