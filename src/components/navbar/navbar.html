@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
     <ul class="nav navbar-nav">
       <li><a ui-sref="list" ui-sref-active="active">Search</a></li>
-      <li><a ui-sref="profile({ id: app.user.uid})" ui-sref-active="active">My Profile</a></li>
+      <li ng-show="app.user"><a ui-sref="profile({ id: app.user.uid})" ui-sref-active="active">My Profile</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">

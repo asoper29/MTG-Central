@@ -11,7 +11,8 @@
   <div class="search-cont">
     <h2>Trade Lists</h2>
 
-    <ul id="search" class='list-group col-xs-4 col-sm-4 col-md-4'>
+    <div ng-hide="search.show" class="col-xs-2 col-sm-2 col-md-2"></div>
+    <ul ng-show="search.show" id="search" class='list-group col-xs-4 col-sm-4 col-md-4'>
       <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
       id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
       <li ng-repeat = "card in search.cards | limitTo: 10"
@@ -29,7 +30,7 @@
       <li class="listItem" ng-repeat="(id, have) in search.haves" >
 
         {{have.name}} | {{have.cardSetName}}
-        <a ng-click="search.removeItemHave(id)"> Remove </a>
+        <a ng-show="search.show" ng-click="search.removeItemHave(id)"> Remove </a>
       </li>
     </ul>
 
@@ -38,7 +39,7 @@
       <li class="listItem" ng-repeat="(id, want) in search.wants" >
 
         {{want.name}} | {{want.cardSetName}}
-        <a ng-click="search.removeItemWant(id)"> Remove </a>
+        <a ng-show="search.show" ng-click="search.removeItemWant(id)"> Remove </a>
       </li>
     </ul>
   </div>
