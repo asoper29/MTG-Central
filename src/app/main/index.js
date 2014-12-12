@@ -87,13 +87,6 @@ angular.module('mtgCentral')
 
   }) // END factory(Auth)
 
-  // .factory('ClickUser', function(){
-  //   function clickedUser(user){
-  //     clickUser = user;
-  //   };
-  //   return clickedUser;
-  // })
-
   /**
   * Main application Controller
   *

@@ -46,7 +46,7 @@ body {
 
 #main > h1 {
   padding: 5pt 0 0 0;
-  margin: 0 0 7pt 0;
+  margin: 0 0 3pt 0;
   color: #fff;
   border-radius: 5px 5px 0 0;
   height: 30pt;
@@ -55,16 +55,18 @@ body {
 #main > h3 {
   color: #9d9d9d;
   font-size: 12pt;
+  margin-bottom: 0;
 }
 
 .list {
-  margin-top: 8%;
+  margin-top: 9%;
   list-style: none;
   padding: 8pt;
 }
 
 .listing {
   height: 45pt;
+  float: none;
 }
 
 .listing:nth-child(odd) {
@@ -77,22 +79,21 @@ body {
 
 .listing > p {
   display: inline;
-  margin-top: 2%;
+  margin-top: 5pt;
 }
 
 .listAuthor  > p {
-  line-height: 30pt;
   font-size: 18pt;
-  margin-top: 2%;
+  margin-top: 5pt;
 }
 
 .authorPic {
   display: inline;
   padding: 0px;
-  width: 41pt;
-  height: 41pt;
+  width: 40pt;
+  height: 40pt;
   border-radius: 4px;
-  margin: 2pt 5pt 0pt -7pt;
+  margin: 0pt 5pt 0pt -7pt;
 }
 
 #search {
@@ -106,7 +107,7 @@ body {
 
 .card {
   margin-top: 1.5%;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 #search > h3 {
@@ -125,7 +126,7 @@ body {
 }
 
 #results {
-  margin-right: 4%;
+  padding: 0;
   margin-top: 10pt;
 }
 
@@ -140,4 +141,55 @@ body {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   font-style: italic;
+}
+
+@media screen and (max-width: 992px) {
+  .listAuthor > p {
+    font-size: 16pt;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .listAuthor > p {
+    font-size: 12pt;
+  }
+  .card > p {
+    font-size: 10pt;
+  }
+
+  #main > h1 {
+    margin-bottom: 0;
+  }
+
+  #main > h3 {
+    margin-top: 5pt;
+  }
+
+  .list {
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .listAuthor > p {
+    font-size: 12pt;
+    margin-top: 16pt;
+  }
+
+  .listAuthor {
+    width: 100%;
+  }
+
+  .card > p {
+    display: none;
+  }
+
+  #main > h3 {
+    display: none;
+  }
+
+  #results > li > p > a {
+    font-size: 9pt;
+  }
+
 }

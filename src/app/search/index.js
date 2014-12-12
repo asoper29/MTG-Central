@@ -29,9 +29,6 @@ angular.module('mtgCentral')
       self.wants = $firebase(FirebaseUrl.child('usercards').child($stateParams.id).child('wants')).$asObject();
       self.user.$loaded(function(){
         self.show = (self.currentUser.uid == self.user.uid);
-        console.log(self.currentUser.uid);
-        console.log(self.user.uid);
-        console.log(self.show);
       });
     });
 

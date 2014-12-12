@@ -17,17 +17,17 @@
 
   <section class="col-xs-10 col-sm-10 col-md-10" id="main">
     <h1 class="col-xs-12 col-sm-12 col-md-12" id="main-head">Search Results</h1>
-    <h3 class="col-xs-4 col-sm-4 col-md-4" id="user-head">User</h3>
-    <h3 class="col-xs-4 col-sm-4 col-md-4" id="desc-head">Card</h3>
-    <h3 class="col-xs-4 col-sm-4 col-md-4" id="updated-head">Last Updated</h3>
+    <h3 class="col-xs-6 col-sm-6 col-md-4" id="user-head">User</h3>
+    <h3 class="col-xs-0 col-sm-0 col-md-4" id="desc-head"></h3>
+    <h3 class="col-xs-6 col-sm-6 col-md-4" id="updated-head">Card</h3>
 
     <ul class="list">
       <li class="listing" ng-repeat="(uid, user) in list.users">
-        <a ui-sref="profile({ id: uid})" ng-click"app.clickedUser(user)" class="col-xs-4 col-sm-4 col-md-4 listAuthor">
+        <a ui-sref="profile({ id: uid})" ng-click"app.clickedUser(user)" class="col-xs-6 col-sm-6 col-md-6 listAuthor">
           <img class="col-xs-4 col-sm-4 col-md-4 authorPic" src="{{user.facebook.avatarUrl}}">
           <p class="col-xs-8 col-sm-8 col-md-8">{{user.facebook.fullName}}</p>
         </a>
-        <section class="card col-xs-4 col-sm-4 col-md-4">
+        <section class="card col-xs-6 col-sm-6 col-md-6">
           <p class="cardQty col-xs-4 col-sm-4 col-md-4">{{user.qty}}x</p>
           <p class="cardName col-xs-8 col-sm-8 col-md-8">{{list.cardSearch}}</p>
         </section>

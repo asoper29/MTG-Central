@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-header">
-    <a class="navbar-brand" ui-sref="home">MTG-Central</a>
+    <a class="navbar-brand" ui-sref="home" ui-sref-active="active">MTG-Central</a>
   </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
@@ -32,7 +32,7 @@
 
     <div id="logoutFb" ng-show="app.user">
       <p>Welcome back, {{app.user.facebook.displayName}}!</p>
-      <button class="btn btn-danger" ng-click="app.logout()">Logout</button>
+      <button class="btn" ui-sref="list">Enter</button>
     </div>
 
 
