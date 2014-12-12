@@ -18,8 +18,14 @@ body {
   height: 180%;
 }
 
+#searchDiv {
+  width: 100%;
+}
+
 header {
-  margin: 8% 0 5% 39%;
+  margin: auto;
+  margin-top: 80pt;
+  margin-bottom: 40pt;
   width: 220pt;
   height: 150pt;
   background-color: rgb(34, 34, 34);
@@ -76,6 +82,7 @@ body div:nth-child(3) h2 {
   height: 412pt;
   border-radius: 4px;
   background-color:rgba(34, 34, 34, 0.9);
+  margin-bottom: 138pt;
 }
 
 #search > li > h4 {
@@ -127,4 +134,32 @@ font-size: 8pt;
 .list-group-item:nth-child(even){
   background-color:rgba(34, 34, 34, 0.9);
   color:darkgray;
+}
+
+@media screen and (max-width: 992px) {
+  #searchbox {
+    height: 572pt;
+    margin-bottom: 0;
+    background-color: rgba(20,20,20,0.9);
+  }
+
+}
+
+@media screen and (max-width: 585px) {
+  header {
+    width: 160pt;
+  }
+
+  #userImg {
+    margin-left: 25%;
+  }
+
+  header > p {
+    margin: 7pt 32% 5pt 0;
+  }
+
+  header > a {
+    left: 11%;
+    top: 0%;
+  }
 }
