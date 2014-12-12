@@ -1,109 +1,39 @@
-
-
-<header style="text-align: left; background-color: black;">
-
-  <br>
-
-  <a id="title" href="#"><img src="assets/images/mtgCentralTextRed.png"></a>
-
-  <a class="mana" href=""><img src="assets/images/mtg_white_mana_dk.png" height="105" width="105"  onmouseover="this.src='assets/images/mtg_white_mana_Lt.png'" onmouseout="this.src='assets/images/mtg_white_mana_dk.png'" /></a>
-
-  <a class="mana" href=""><img src="assets/images/mtg_blue_mana_dk.png" height="105" width="105"  onmouseover="this.src='assets/images/mtg_blue_mana_Lt.png'" onmouseout="this.src='assets/images/mtg_blue_mana_dk.png'" /></a>
-
-  <a class="mana" href=""><img src="assets/images/mtg_black_mana_dk.png" height="105" width="105"  onmouseover="this.src='assets/images/mtg_black_mana_Lt.png'" onmouseout="this.src='assets/images/mtg_black_mana_dk.png'" /></a>
-
-  <a class="mana" href=""><img src="assets/images/mtg_red_mana_dk.png"  height="105" width="105" onmouseover="this.src='assets/images/mtg_red_mana_Lt.png'" onmouseout="this.src='assets/images/mtg_red_mana_dk.png'" /></a>
-
-  <a class="mana" ui-sref="list"><img src="assets/images/mtg_green_mana_dk.png" height="105" width="105"  onmouseover="this.src='assets/images/mtg_green_mana_Lt.png'" onmouseout="this.src='assets/images/mtg_green_mana_dk.png'" /></a>
-
-  <div ng-hide="app.user">
-    <button class="btn btn-lg btn-primary" ng-click="app.login()">Login</button>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" ui-sref="home">MTG-Central</a>
   </div>
 
-  <div ng-show="app.user">
-    <button class="btn btn-danger" ng-click="app.logout()">Logout</button>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+    <ul class="nav navbar-nav">
+      <li ng-show="app.user"><a ui-sref="profile({ id: app.user.uid})" ui-sref-active="active">My Profile</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" id="searchNav">
+      <li><a ui-sref="list" ui-sref-active="active">Search</a></li>
+    </ul>
   </div>
+</nav>
 
-</header>
+<img id="mainImg" src="assets/images/mtg-background-1.jpg">
 
 
-<main class="cd-main-content">
-  <div class="cd-fixed-bg cd-bg-1">
-    <section>
+<section id="mtgMain">
 
-      <h1>The future of local </h1>
-      <br>
-      <br>
-      <p><img src="http://www.mtgeconomist.com/wp-content/uploads/2012/11/Magic_the_Gathering_Logo-1024x288.png"></img></p>
-      <br>
-      <br>
-      <h2>trading</h2>
+  <h1>The future of local </h1>
+  <img src="http://www.mtgeconomist.com/wp-content/uploads/2012/11/Magic_the_Gathering_Logo-1024x288.png"></img>
+  <h2>trading</h2>
 
-      <p>Connect with local players, organize your trade lists, and find the cards you need more efficiently with MTGC<p>
-      </section>
+  <p>Connect with local players, organize your trade lists, and find the cards you need more efficiently with MTGC<p>
+
+    <div id="loginFb" ng-hide="app.user">
+      <p>Login, create your profile, and start trading now!</p>
+      <button class="btn btn-lg btn-primary" ng-click="app.login()">Login with Facebook</button>
+    </div>
+
+    <div id="logoutFb" ng-show="app.user">
+      <p>Welcome back, {{app.user.facebook.displayName}}!</p>
+      <button class="btn btn-danger" ng-click="app.logout()">Logout</button>
     </div>
 
 
-    <div class="cd-scrolling-bg cd-color-2">
-      <div class="cd-container">
-        <div class="fallingCards"></div>
-
-      </div>
-    </div>
-
-    <div class="cd-fixed-bg cd-bg-2">
-      <h2>Create Your Profile</h2>
-      <p></p>
-      <img id="profile-img" src="assets/images/profile.png">
-    </div>
-
-    <div class="cd-scrolling-bg cd-color-3">
-      <div class="cd-container">
-        <h2>Search For Cards</h2>
-        <p></p>
-        <img id="search-img" src="assets/images/search.png">
-      </div>
-    </div>
-
-    <div class="cd-fixed-bg cd-bg-3">
-      <h2>View Others' Profiles</h2>
-      <p></p>
-      <img id="listings-img" src="assets/images/listings.jpg">
-    </div>
-
-    <div class="cd-scrolling-bg cd-color-1">
-      <div class="cd-container">
-
-        <div class="col-xs-12 row1">
-          <img src="assets/images/01_mtg_Nodejs-NpmLogo.png">
-          <img src="assets/images/02_mtg_Html5_Css3_JsLogo.png">
-          <img src="assets/images/03_mtg_BootstrapLogo.png">
-          <img src="assets/images/04_mtg_SassLogo.png">
-          <img src="assets/images/05_mtg_BourbonLogo.png">
-        </div>
-
-        <div class="col-xs-12 row2">
-          <img src="assets/images/06_mtg_FirebaseLogo.png">
-          <img src="assets/images/07_mtg_UiLogo.png">
-          <img src="assets/images/08_mtg_AngularLogo.png">
-          <img src="assets/images/09_mtg_JqueryLogo.png">
-          <img src="assets/images/10_mtg_AjaxLogo.png">
-        </div>
-
-        <div class="col-xs-12 row3">
-          <img src="assets/images/11_mtg_YoLogo.png">
-          <img src="assets/images/13_mtg_GulpLogo.png">
-          <img src="assets/images/14_mtg_BowerLogo.png">
-          <img src="assets/images/15_mtg_GithubLogo.png">
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="cd-fixed-bg cd-bg-4">
-      <h2>Buy Cards From Others</h2>
-      <p></p>
-      <img src="">
-    </div>
-  </main>
+</section>

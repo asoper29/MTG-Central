@@ -3,7 +3,7 @@ body {
   font-family: "Cinzel", serif;
 }
 
-.logout {
+.logout, .login {
   position: relative;
   right: 30%;
   top: 6pt;

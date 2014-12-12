@@ -1,6 +1,6 @@
 <div ng-controller='SearchCtrl as search'>
   <div ng-include="'components/navbar/navbar.html'"></div>
-  <img id="bgnd" src="http://i.imgur.com/DCUum.jpg">
+  <img id="bgnd" src="http://2.bp.blogspot.com/-TIG41Xxb9SU/U9mIJCkHdxI/AAAAAAAABfw/6Tb1miQQJmY/s1600/Art_01_Shrine_JungPark.jpg">
   <header>
     <img id="userImg" src="{{search.currentUser.avatarUrl}}"/>
     <p>{{search.currentUser.facebook.displayName}}</p>
@@ -12,11 +12,11 @@
     <h2>Trade Lists</h2>
 
     <div ng-hide="search.show" class="col-xs-2 col-sm-2 col-md-2"></div>
-    <ul ng-show="search.show" id="searchbox" class='list-group col-xs-4 col-sm-4 col-md-4'>
+    <ul ng-show="search.show" id="searchbox" class='list-group col-xs-12 col-sm-12 col-md-4'>
       <input autocomplete="off" type="text" ng-model="searchForm" ng-keyup="search.searchByName()" name="q"
-      id="topsearch" placeholder="Search..." class="field"  autofocus='autofocus'/>
-      <li ng-repeat = "card in search.cards | limitTo: 10"
-      style="list-style-type:none" class='list-group-item'>
+      id="topsearchprofile" placeholder="Search..." class="field"  autofocus='autofocus'/>
+      <li ng-repeat="card in search.cards | limitTo: 10"
+      style="list-style-type:none" class='listItem list-group-item'>
 
         <h4>{{card.name}} | {{card.cardSetName}} </h4>
         <a class="haveAdd" ng-click='search.addItemHave(search.cards[$index])'>Have</a>
@@ -25,7 +25,7 @@
       </li>
     </ul>
 
-    <ul id="have" class="col-xs-4 col-sm-4 col-md-4">
+    <ul id="have" class="col-xs-12 col-sm-6 col-md-4">
       <h3>Haves</h3>
       <li class="listItem" ng-repeat="(id, have) in search.haves" >
 
@@ -34,7 +34,7 @@
       </li>
     </ul>
 
-    <ul id="want" class="col-xs-4 col-sm-4 col-md-4">
+    <ul id="want" class="col-xs-12 col-sm-6 col-md-4">
       <h3>Wants</h3>
       <li class="listItem" ng-repeat="(id, want) in search.wants" >
 

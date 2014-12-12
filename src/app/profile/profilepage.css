@@ -23,7 +23,7 @@ header {
   left: 39%;
   margin: 8% 0 5% 0;
   width: 22%;
-  height: 220pt;
+  height: 150pt;
   background-color: rgb(34, 34, 34);
   border-radius: 4px;
 }
@@ -32,45 +32,29 @@ header > p {
   color: white;
   text-align: center;
   padding: 0;
-  margin: 10pt 0 0 0;
+  margin: 27% 9% 0 0;
+  float: right;
 }
 
 header > a {
-  margin-left: 20%;
+  position: relative;
+  left: 20%;
+  top: 12%;
+  white-space: nowrap;
 }
 
-.logout {
+.logout, .login {
   position: relative;
   right: 30%;
   top: 6pt;
 }
 
-body button h3 {
-  font-size: 16px;
-  line-height: 8px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-body header a {
-  padding-bottom: 3px;
-}
-
 #userImg {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   margin-left: 13%;
   margin-top: 10%;
-}
-
-
-
-body div:nth-child(3) h1 {
-  color: white;
-  text-align: left;
-  padding-top: 15px;
-  font-family: "Cinzel", serif;
-  margin-left: 30px;
+  float: left;
 }
 
 body div:nth-child(3) h2 {
@@ -84,13 +68,16 @@ body div:nth-child(3) h2 {
   margin-right: 46px;
 }
 
-#topsearch{
+#topsearchprofile{
   width: 100%;
 }
 
 #searchbox {
   font-size: 10pt;
-  padding: 0 2pt 0 2pt;
+  padding: 0 0 0 0;
+  height: 412pt;
+  border-radius: 4px;
+  background-color:rgba(34, 34, 34, 0.9);
 }
 
 #search > li > h4 {
@@ -102,12 +89,9 @@ body div:nth-child(3) h2 {
   margin-left: 25%;
 }
 
-.haveAdd {
-  margin-left: 25%;
-}
-
-.listItem {
+.listItem, .listItem > h4 {
   font-size: 10pt;
+  text-align: center;
 }
 
 .listItem > a {
@@ -122,6 +106,7 @@ font-size: 8pt;
   color:darkgray;
   line-height:30px;
   border-radius: 4px;
+  text-align: center;
 }
 #want{
   height: 412pt;
@@ -131,6 +116,7 @@ font-size: 8pt;
   overflow:scroll;
   color:darkgray;
   line-height:30px;
+  text-align: center;
 }
 .list-group-item{
   border: none;

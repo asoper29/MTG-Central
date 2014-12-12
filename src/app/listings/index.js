@@ -10,7 +10,7 @@ angular.module('mtgCentral')
     function UserSearch() {}
     UserSearch.prototype.autoByName = function(searchString) {
       // TODO: Figure out the best way to add a delay
-      return $http.get('http://api.mtgdb.info/search/' + searchString);
+      return $http.get('https://api.mtgdb.info/search/' + searchString);
     };
     return (UserSearch);
   })

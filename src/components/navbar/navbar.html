@@ -10,6 +10,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
+      <button class="login btn btn-primary" ng-hide="app.user" ng-click="app.login()">Login</button>
       <button class="logout btn btn-danger" ng-show="app.user" ng-click="app.logout()">Log Out</button>
     </ul>
   </div>
